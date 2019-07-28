@@ -44,23 +44,19 @@ public class baseGUI implements Initializable {
         selectFile.setTitle("Please select the DXF file to use");
         selectFile.getExtensionFilters().add(new FileChooser.ExtensionFilter("DXF","*.dxf"));
         saveFile = selectFile.showOpenDialog(null);
+        DXFReader(saveFile);
     }
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
+    private void DXFReader(File path){
         Parser parser = ParserBuilder.createDefaultParser();
         SVGViewUIComponent DXFViewer=new SVGViewUIComponent();
         try {
-            parser.parse("C:\\UNI\\CMMSB\\Proyectos\\Ruta minima\\dxf\\ConsultaMasiva_EPSG_25830.dxf");
+            parser.parse(path.getAbsolutePath(),DXFParser.DEFAULT_ENCODING);
 
         } catch (ParseException e) {
             e.printStackTrace();
         }
         doc = parser.getDocument();
-
-
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -78,6 +74,17 @@ public class baseGUI implements Initializable {
 
             }
         });
+    }
+
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+
+
 
     }
 }
