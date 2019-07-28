@@ -5,18 +5,24 @@ import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import org.apache.batik.swing.JSVGCanvas;
 import org.kabeja.dxf.DXFConstants;
 import org.kabeja.dxf.DXFDocument;
+import org.kabeja.dxf.DXFEntity;
 import org.kabeja.dxf.DXFLayer;
 import org.kabeja.parser.DXFParser;
 import org.kabeja.parser.ParseException;
 import org.kabeja.parser.Parser;
 import org.kabeja.parser.ParserBuilder;
+import org.kabeja.svg.ui.SVGViewUIComponent;
+import org.kabeja.ui.UIException;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.net.URL;
 import java.util.List;
@@ -26,17 +32,9 @@ public class baseGUI implements Initializable {
     public baseGUI(){   }
 
     private File saveFile;
-    private SwingNode SVGViewer=new SwingNode();
-    private JSVGCanvas SVGCanvas = new JSVGCanvas();
-    public void swingContenteSVG(SwingNode swingNode){
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                swingNode.setContent(SVGCanvas);
-            }
-        });
-    }
-
+    @FXML
+    private SwingNode swingNode=new SwingNode();
+    private DXFDocument doc=new DXFDocument();
     @FXML
     private AnchorPane anchDXF=new AnchorPane();
 
@@ -46,26 +44,40 @@ public class baseGUI implements Initializable {
         selectFile.setTitle("Please select the DXF file to use");
         selectFile.getExtensionFilters().add(new FileChooser.ExtensionFilter("DXF","*.dxf"));
         saveFile = selectFile.showOpenDialog(null);
-        DXFReader(saveFile.getAbsolutePath(),"PARCELA");
-        swingContenteSVG(SVGViewer);
-        anchDXF.getChildren().add(SVGViewer);
     }
 
-    public  void DXFReader(String paht, String Layerid){
-
-        Parser parser = ParserBuilder.createDefaultParser();
-        try {
-            parser.parse(paht,DXFParser.DEFAULT_ENCODING);
-            DXFDocument doc = parser.getDocument();
-            DXFLayer Parcela = doc.getDXFLayer(Layerid);
-            List polyLines = Parcela.getDXFEntities(DXFConstants.ENTITY_TYPE_POLYLINE);
-
-        }catch (ParseException e ){}
-
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        Parser parser = ParserBuilder.createDefaultParser();
+        SVGViewUIComponent DXFViewer=new SVGViewUIComponent();
+        try {
+            parser.parse("C:\\UNI\\CMMSB\\Proyectos\\Ruta minima\\dxf\\ConsultaMasiva_EPSG_25830.dxf");
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        doc = parser.getDocument();
+
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+
+                swingNode.setContent(DXFViewer.getView());
+                try {
+                    DXFViewer.showDXFDocument(doc);
+                } catch (UIException e) {
+                    e.printStackTrace();
+                }
+                System.out.println(swingNode.isResizable());
+                swingNode.maxHeight(1000);
+                swingNode.maxWidth(1000);
+                swingNode.resize(800,600);
+
+            }
+        });
 
     }
 }
