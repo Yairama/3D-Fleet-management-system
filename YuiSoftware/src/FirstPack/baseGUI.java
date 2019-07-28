@@ -52,7 +52,6 @@ public class baseGUI implements Initializable {
         SVGViewUIComponent DXFViewer=new SVGViewUIComponent();
         try {
             parser.parse(path.getAbsolutePath(),DXFParser.DEFAULT_ENCODING);
-
         } catch (ParseException e) {
             e.printStackTrace();
         }
