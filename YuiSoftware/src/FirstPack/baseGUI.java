@@ -46,7 +46,7 @@ public class baseGUI implements Initializable {
         saveFile = selectFile.showOpenDialog(null);
         DXFReader(saveFile);
     }
-
+// hola
     private void DXFReader(File path){
         Parser parser = ParserBuilder.createDefaultParser();
         SVGViewUIComponent DXFViewer=new SVGViewUIComponent();
