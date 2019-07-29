@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action
+END
+messages_de_DE.properties
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/messages_de_DE.properties
+END
+JSVGCanvasAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/JSVGCanvasAction.java
+END
+CustomActionView.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/CustomActionView.java
+END
+messages_da_DK.properties
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/messages_da_DK.properties
+END
+CanvasUpdateRunnable.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/CanvasUpdateRunnable.java
+END
+Messages.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/Messages.java
+END
+CanvasUpdateManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/CanvasUpdateManager.java
+END
+ToggleInteractorActionAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/ToggleInteractorActionAdapter.java
+END
+DXFDocumentAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/DXFDocumentAction.java
+END
+messages.properties
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/messages.properties
+END
+SelectionAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/SelectionAction.java
+END
+PrintAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/PrintAction.java
+END
+GroupAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/GroupAction.java
+END
+SVGDocumentAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/SVGDocumentAction.java
+END
+LayoutSwitchAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/LayoutSwitchAction.java
+END
+GroupActionUnSelector.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/GroupActionUnSelector.java
+END
+ViewerAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/svg/action/ViewerAction.java
+END

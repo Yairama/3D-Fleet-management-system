@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/objects
+END
+DXFImageDefHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/objects/DXFImageDefHandler.java
+END
+DXFDictionaryHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/objects/DXFDictionaryHandler.java
+END
+DXFMLineStyleHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/objects/DXFMLineStyleHandler.java
+END
+DXFObjectHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/objects/DXFObjectHandler.java
+END
+AbstractDXFObjectHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/objects/AbstractDXFObjectHandler.java
+END
+DXFLayoutHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/objects/DXFLayoutHandler.java
+END
+DXFPlotsettingsHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/objects/DXFPlotsettingsHandler.java
+END

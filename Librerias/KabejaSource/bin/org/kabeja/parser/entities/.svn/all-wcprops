@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities
+END
+DXFSplineHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFSplineHandler.java
+END
+DXFPolylineHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFPolylineHandler.java
+END
+DXFRayHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFRayHandler.java
+END
+DXFLeaderHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFLeaderHandler.java
+END
+DXFBodyHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFBodyHandler.java
+END
+DXFEllipseHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFEllipseHandler.java
+END
+AbstractEntityHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/AbstractEntityHandler.java
+END
+DXFTraceHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFTraceHandler.java
+END
+DXFLWPolylineHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFLWPolylineHandler.java
+END
+DXFShapeHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFShapeHandler.java
+END
+DXF3DSolidHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXF3DSolidHandler.java
+END
+DXFCircleHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFCircleHandler.java
+END
+DXFMTextHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFMTextHandler.java
+END
+DXFInsertHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFInsertHandler.java
+END
+DXFMLineHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFMLineHandler.java
+END
+DXFArcHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFArcHandler.java
+END
+DXFSolidHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFSolidHandler.java
+END
+DXFToleranceHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFToleranceHandler.java
+END
+DXFEntityHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFEntityHandler.java
+END
+DXFXLineHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFXLineHandler.java
+END
+DXFViewportHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFViewportHandler.java
+END
+DXFImageHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFImageHandler.java
+END
+DXFRegionHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFRegionHandler.java
+END
+DXFTextHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFTextHandler.java
+END
+DXFAttribHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFAttribHandler.java
+END
+DXFDimensionHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFDimensionHandler.java
+END
+DXF3DFaceHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXF3DFaceHandler.java
+END
+DXFHatchHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFHatchHandler.java
+END
+DXFLineHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/entities/DXFLineHandler.java
+END

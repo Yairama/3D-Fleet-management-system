@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/table
+END
+DXFViewTableHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/table/DXFViewTableHandler.java
+END
+DXFVPortTableHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/table/DXFVPortTableHandler.java
+END
+DXFLayerTableHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/table/DXFLayerTableHandler.java
+END
+DXFTableHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/table/DXFTableHandler.java
+END
+DXFStyleTableHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/table/DXFStyleTableHandler.java
+END
+AbstractTableHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/table/AbstractTableHandler.java
+END
+DXFDimensionStyleTableHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/table/DXFDimensionStyleTableHandler.java
+END
+DXFLineTypeTableHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/parser/table/DXFLineTypeTableHandler.java
+END

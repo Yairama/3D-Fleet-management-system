@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/dxf/objects
+END
+DXFLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/dxf/objects/DXFLayout.java
+END
+DXFMLineStyleElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/dxf/objects/DXFMLineStyleElement.java
+END
+DXFPlotSettings.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/dxf/objects/DXFPlotSettings.java
+END
+DXFDictionary.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/dxf/objects/DXFDictionary.java
+END
+DXFMLineStyle.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/dxf/objects/DXFMLineStyle.java
+END
+DXFObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/dxf/objects/DXFObject.java
+END
+DXFImageDefObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/dxf/objects/DXFImageDefObject.java
+END

@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.apache.batik.swing.JSVGCanvas;
+
 import org.kabeja.dxf.DXFConstants;
 import org.kabeja.dxf.DXFDocument;
 import org.kabeja.dxf.DXFEntity;
@@ -46,7 +47,9 @@ public class baseGUI implements Initializable {
         saveFile = selectFile.showOpenDialog(null);
         DXFReader(saveFile);
     }
-    // hola
+
+
+
     private void DXFReader(File path){
         Parser parser = ParserBuilder.createDefaultParser();
         SVGViewUIComponent DXFViewer=new SVGViewUIComponent();

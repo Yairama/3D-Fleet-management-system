@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/math
+END
+ParametricPlane.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/math/ParametricPlane.java
+END
+NURBS.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/math/NURBS.java
+END
+MathUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/math/MathUtils.java
+END
+TransformContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/math/TransformContext.java
+END
+NURBSAutoStepPointIterator.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/math/NURBSAutoStepPointIterator.java
+END
+NURBSFixedNTELSPointIterator.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/14/trunk/Kabeja/src/org/kabeja/math/NURBSFixedNTELSPointIterator.java
+END
