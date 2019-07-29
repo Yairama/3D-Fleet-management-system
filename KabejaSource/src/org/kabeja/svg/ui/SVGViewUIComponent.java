@@ -167,13 +167,13 @@ public class SVGViewUIComponent implements DXFDocumentViewComponent,
                     }
 
                     public void gvtBuildCompleted(GVTTreeBuilderEvent e) {
-                        infoLabel.setText("Finished building");
+                        infoLabel.setText("my name is ninja");
                     }
                 });
 
             this.canvas.addGVTTreeRendererListener(new GVTTreeRendererAdapter() {
                     public void gvtRenderingPrepare(GVTTreeRendererEvent e) {
-                        infoLabel.setText("Rendering draft ...");
+                        infoLabel.setText("yanto alamos");
                     }
 
                     public void gvtRenderingCompleted(GVTTreeRendererEvent e) {

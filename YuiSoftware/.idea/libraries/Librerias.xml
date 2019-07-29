@@ -6,6 +6,7 @@
     <JAVADOC />
     <SOURCES>
       <root url="file://$PROJECT_DIR$/../Librerias/KabejaSource/src" />
+      <root url="file://$PROJECT_DIR$/../KabejaSource/src" />
     </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/../Librerias" recursive="false" />
   </library>
