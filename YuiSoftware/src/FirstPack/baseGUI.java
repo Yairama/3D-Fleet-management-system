@@ -46,7 +46,7 @@ public class baseGUI implements Initializable {
         saveFile = selectFile.showOpenDialog(null);
         DXFReader(saveFile);
     }
-// hola
+    // hola
     private void DXFReader(File path){
         Parser parser = ParserBuilder.createDefaultParser();
         SVGViewUIComponent DXFViewer=new SVGViewUIComponent();
@@ -66,11 +66,6 @@ public class baseGUI implements Initializable {
                 } catch (UIException e) {
                     e.printStackTrace();
                 }
-                System.out.println(swingNode.isResizable());
-                swingNode.maxHeight(1000);
-                swingNode.maxWidth(1000);
-                swingNode.resize(800,600);
-
             }
         });
     }
@@ -80,9 +75,6 @@ public class baseGUI implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
-
 
 
     }
