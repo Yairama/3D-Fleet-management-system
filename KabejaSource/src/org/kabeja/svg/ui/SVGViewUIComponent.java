@@ -163,7 +163,7 @@ public class SVGViewUIComponent implements DXFDocumentViewComponent,
 
             this.canvas.addGVTTreeBuilderListener(new GVTTreeBuilderAdapter() {
                     public void gvtBuildStarted(GVTTreeBuilderEvent e) {
-                        infoLabel.setText("Building draft ...");
+                        infoLabel.setText("Ninyaaaa ...");
                     }
 
                     public void gvtBuildCompleted(GVTTreeBuilderEvent e) {
