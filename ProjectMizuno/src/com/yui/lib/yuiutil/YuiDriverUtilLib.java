@@ -1,34 +1,12 @@
 package com.yui.lib.yuiutil;
-import javax.swing.*;
-import java.awt.*;
 
+    /**Clase Driver del paquete Util*/
 public class YuiDriverUtilLib {
-    //clase principal
-
+    /**Constructor*/
+    public YuiDriverUtilLib(){}
 
     public static void main(String argv[])  {
-        MarcoYui marquito = new MarcoYui();
-        marquito.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        System.out.println("Yui Mizuno Project July/2019");
     }
-}
-class MarcoYui extends JFrame{
-    int coordenadax=
-    int coordenaday=
-    int coordenadaz=
-    public MarcoYui() {
-        setVisible(true);
-        setTitle("Seleccione el primer punto");
-        setBounds(300, 300, 600, 700);
-        add(laminadeyui, BorderLayout_SOUTH);
-
-    }
-    class laminadeyui extends JPanel{
-        public laminadeyui() {
-            setLayout(new BorderLayout());
-            System.out.println("x: " + coordenadax + " y: " + coordenaday + " z: " + coordenadaz);
-        }
-    }
-
 
     }
