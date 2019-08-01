@@ -7,7 +7,7 @@ import java.net.*;
 
 public class YuiutilOHandler{
 
-    private JFrame applet  = null;
+    private JFrame jFrame  = null;
 
     public YuiutilOHandler()  {
 
@@ -17,10 +17,10 @@ public class YuiutilOHandler{
         setJFrame(applet);
     }
 
-    private JFrame setJFrame(JFrame applet)  {
+    private JFrame setJFrame(JFrame jFrame)  {
         // das un parametro que sea referencia a un jframe y recibes una referencia a jframe ( siempre es asi de confuso)
-        this.applet = applet;
-        return this.applet;
+        this.jFrame = jFrame;
+        return this.jFrame;
     }
     public InputStream openInputStream(String argstr_name,String argstr_baseurl, String argstr_src, String argstr_srcfile, String argstr_srcurl) {
         System.out.println("++YuiutilIOHandler:==================================================");

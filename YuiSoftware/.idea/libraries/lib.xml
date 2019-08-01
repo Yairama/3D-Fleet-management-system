@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/kabeja-0.4-src/kabeja-0.4/blocks/cocoon/src/java" />
+      <root url="file://$PROJECT_DIR$/kabeja-0.4-src/kabeja-0.4/blocks/inkscape/src" />
+      <root url="file://$PROJECT_DIR$/kabeja-0.4-src/kabeja-0.4/blocks/svg/src" />
+      <root url="file://$PROJECT_DIR$/kabeja-0.4-src/kabeja-0.4/blocks/xslt/src" />
+      <root url="file://$PROJECT_DIR$/kabeja-0.4-src/kabeja-0.4/src" />
+      <root url="file://$PROJECT_DIR$/kabeja-0.4-src/kabeja-0.4/tools/anttask/src" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
+  </library>
+</component>
