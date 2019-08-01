@@ -1,7 +1,7 @@
 package com.yui.lib.yuiutil;
 import java.io.*;
 
-public class YuiutilIOHandlerName {
+public class YuiutilOHandlerName {
 
     public String              name                     = null;
 
@@ -29,10 +29,10 @@ public class YuiutilIOHandlerName {
 
     public OutputStream        os                       = null;
 
-    public  YuiutilIOHandlerName()  {
+    public  YuiutilOHandlerName()  {
     }
 
-    public  YuiutilIOHandlerName(String argstr_name) {
+    public  YuiutilOHandlerName(String argstr_name) {
         name  = argstr_name;
     }
 
