@@ -75,8 +75,10 @@ public class baseGUI implements Initializable {
         System.out.println(LayerOne.hasDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE));
         List<DXFLWPolyline> PoliList = LayerOne.getDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE);
         System.out.println(PoliList);
-        System.out.println(PoliList.get(0).getVertex(1));
-
+        System.out.println(PoliList.get(0).getVertex(1).getBounds().getMaximumX());
+        System.out.println(PoliList.get(0).getVertex(1).getBounds().getMinimumX());
+        System.out.println(PoliList.get(0).getVertex(1).getBounds().getMinimumY());
+        System.out.println(PoliList.get(0).getElevation());
     }
 
 
