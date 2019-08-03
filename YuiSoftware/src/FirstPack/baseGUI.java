@@ -1,6 +1,10 @@
 package FirstPack;
 
 import com.sun.javafx.scene.paint.GradientUtils;
+import com.ysystems.ycad.app.ycadv.YcadvPane;
+import com.ysystems.ycad.lib.ydxf.YdxfGet;
+import com.ysystems.ycad.lib.ydxf.YdxfGetBuffer;
+import com.ysystems.ycad.lib.yxxf.Yxxf;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,10 +14,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.apache.batik.swing.JSVGCanvas;
-import org.kabeja.dxf.DXFConstants;
-import org.kabeja.dxf.DXFDocument;
-import org.kabeja.dxf.DXFEntity;
-import org.kabeja.dxf.DXFLayer;
+import org.kabeja.dxf.*;
 import org.kabeja.parser.DXFParser;
 import org.kabeja.parser.ParseException;
 import org.kabeja.parser.Parser;
@@ -23,8 +24,9 @@ import org.kabeja.ui.UIException;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
+import java.io.*;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -68,6 +70,13 @@ public class baseGUI implements Initializable {
                 }
              }
         });
+        
+        DXFLayer LayerOne = doc.getDXFLayer("CN_Z1_3107");
+        System.out.println(LayerOne.hasDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE));
+        List<DXFLWPolyline> PoliList = LayerOne.getDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE);
+        System.out.println(PoliList);
+        System.out.println(PoliList.get(0).getVertex(1));
+
     }
 
 
