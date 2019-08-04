@@ -78,7 +78,6 @@ public class baseGUI implements Initializable {
         });
 
         Iterator<DXFLayer> layerIt = doc.getDXFLayerIterator();
-        System.out.println(layerIt.next().getName());
         DXFLayer LayerOne = doc.getDXFLayer("CN_Z1_3107");
         System.out.println(LayerOne.hasDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE));
         List<DXFLWPolyline> PoliList = LayerOne.getDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE);

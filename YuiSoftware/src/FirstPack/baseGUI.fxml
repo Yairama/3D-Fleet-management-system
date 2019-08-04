@@ -64,7 +64,7 @@
                       </Tab>
                       <Tab text="DXF View">
                            <content>
-                              <SwingNode fx:id="swingNode1" />
+                              <SwingNode fx:id="swingNodegl" />
                            </content>
                       </Tab>
                     </tabs>
