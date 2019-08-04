@@ -12,6 +12,7 @@ public class MainYui extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+    baseGUI sadasd=new baseGUI();
 
     @Override
     public void start(Stage stage) throws Exception {

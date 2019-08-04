@@ -1,10 +1,6 @@
 package FirstPack;
 
-import com.sun.javafx.scene.paint.GradientUtils;
-import com.ysystems.ycad.app.ycadv.YcadvPane;
-import com.ysystems.ycad.lib.ydxf.YdxfGet;
-import com.ysystems.ycad.lib.ydxf.YdxfGetBuffer;
-import com.ysystems.ycad.lib.yxxf.Yxxf;
+
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.batik.apps.svgbrowser.SquiggleInputHandler;
 import org.apache.batik.swing.JSVGCanvas;
 import org.kabeja.dxf.*;
 import org.kabeja.parser.DXFParser;
@@ -27,33 +24,38 @@ import java.awt.*;
 import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class baseGUI implements Initializable {
+    /**Constructor*/
     public baseGUI(){   }
 
-    private File saveFile;
+    /**Atribtuos*/
+    protected DXFDocument doc=new DXFDocument();
+    private SVGViewUIComponent DXFViewer=new SVGViewUIComponent();
+    protected File saveFile;
     @FXML
     private SwingNode swingNode=new SwingNode();
-    private DXFDocument doc=new DXFDocument();
-    @FXML
-    private AnchorPane anchDXF=new AnchorPane();
 
+     /**Metodos*/
     @FXML
     private void openFile(ActionEvent event){
         FileChooser selectFile = new FileChooser();
         selectFile.setTitle("Please select the DXF file to use");
         selectFile.getExtensionFilters().add(new FileChooser.ExtensionFilter("DXF","*.dxf"));
         saveFile = selectFile.showOpenDialog(null);
+        if(saveFile==null){
+            return;
+        }
         DXFReader(saveFile);
     }
-// hola
-    private void DXFReader(File path){
+    private void DXFReader(File path) {
         Parser parser = ParserBuilder.createDefaultParser();
-        SVGViewUIComponent DXFViewer=new SVGViewUIComponent();
+        SVGViewUIComponent DXFViewer = new SVGViewUIComponent();
         try {
-            parser.parse(path.getAbsolutePath(),DXFParser.DEFAULT_ENCODING);
+            parser.parse(path.getAbsolutePath(), DXFParser.DEFAULT_ENCODING);
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -68,9 +70,8 @@ public class baseGUI implements Initializable {
                 } catch (UIException e) {
                     e.printStackTrace();
                 }
-             }
+            }
         });
-        
         DXFLayer LayerOne = doc.getDXFLayer("CN_Z1_3107");
         System.out.println(LayerOne.hasDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE));
         List<DXFLWPolyline> PoliList = LayerOne.getDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE);
@@ -79,6 +80,26 @@ public class baseGUI implements Initializable {
         System.out.println(PoliList.get(0).getVertex(1).getBounds().getMinimumX());
         System.out.println(PoliList.get(0).getVertex(1).getBounds().getMinimumY());
         System.out.println(PoliList.get(0).getElevation());
+       getCoordenadas(PoliList);
+    }
+
+    protected List<double[]> ListCoord = new ArrayList<double[]>();
+    private void getCoordenadas(List<DXFLWPolyline> polylines){
+        double[] Policoordenadas = new double[3];
+        for (int i=0; i<polylines.size();i++){
+            for (int k=0; k<polylines.get(i).getVertexCount();k++) {
+                double coordX = polylines.get(i).getVertex(k).getBounds().getMaximumX();
+                double coordY = polylines.get(i).getVertex(k).getBounds().getMaximumY();
+                double coordZ = polylines.get(i).getElevation();
+                Policoordenadas[0]=coordX;
+                Policoordenadas[1]=coordY;
+                Policoordenadas[2]=coordZ;
+            }
+            ListCoord.add(Policoordenadas);
+
+            System.out.println(ListCoord.get(i)[0]+"-"+ListCoord.get(i)[1]+"-"+ListCoord.get(i)[2]);
+        }
+
     }
 
 
@@ -87,6 +108,6 @@ public class baseGUI implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
     }
 }
+
