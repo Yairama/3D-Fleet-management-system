@@ -16,6 +16,7 @@ import org.kabeja.parser.DXFParser;
 import org.kabeja.parser.ParseException;
 import org.kabeja.parser.Parser;
 import org.kabeja.parser.ParserBuilder;
+import org.kabeja.parser.table.DXFLayerTableHandler;
 import org.kabeja.svg.ui.SVGViewUIComponent;
 import org.kabeja.ui.UIException;
 
@@ -25,6 +26,7 @@ import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -60,6 +62,7 @@ public class baseGUI implements Initializable {
             e.printStackTrace();
         }
         doc = parser.getDocument();
+
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -70,8 +73,12 @@ public class baseGUI implements Initializable {
                 } catch (UIException e) {
                     e.printStackTrace();
                 }
+
             }
         });
+
+        Iterator<DXFLayer> layerIt = doc.getDXFLayerIterator();
+        System.out.println(layerIt.next().getName());
         DXFLayer LayerOne = doc.getDXFLayer("CN_Z1_3107");
         System.out.println(LayerOne.hasDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE));
         List<DXFLWPolyline> PoliList = LayerOne.getDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE);
@@ -80,7 +87,7 @@ public class baseGUI implements Initializable {
         System.out.println(PoliList.get(0).getVertex(1).getBounds().getMinimumX());
         System.out.println(PoliList.get(0).getVertex(1).getBounds().getMinimumY());
         System.out.println(PoliList.get(0).getElevation());
-       getCoordenadas(PoliList);
+        getCoordenadas(PoliList);
     }
 
     protected List<double[]> ListCoord = new ArrayList<double[]>();
@@ -96,18 +103,18 @@ public class baseGUI implements Initializable {
                 Policoordenadas[2]=coordZ;
             }
             ListCoord.add(Policoordenadas);
-
             System.out.println(ListCoord.get(i)[0]+"-"+ListCoord.get(i)[1]+"-"+ListCoord.get(i)[2]);
         }
-
     }
-
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                swingNode.setContent(DXFViewer.getView());
+            }
+        });
     }
 }
 

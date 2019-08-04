@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -53,10 +55,20 @@
                 <RowConstraints vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <AnchorPane fx:id="anchDXF" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                     <children>
-                        <SwingNode fx:id="swingNode" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                     </children></AnchorPane>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnIndex="1">
+                    <tabs>
+                      <Tab text="SVG View">
+                           <content>
+                              <SwingNode fx:id="swingNode" />
+                           </content>
+                      </Tab>
+                      <Tab text="DXF View">
+                           <content>
+                              <SwingNode fx:id="swingNode1" />
+                           </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
                </children>
             </GridPane>
          </children>
