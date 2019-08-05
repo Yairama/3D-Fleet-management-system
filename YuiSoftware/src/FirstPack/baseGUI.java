@@ -5,21 +5,21 @@ import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import org.apache.batik.apps.svgbrowser.SquiggleInputHandler;
-import org.apache.batik.swing.JSVGCanvas;
 import org.kabeja.dxf.*;
 import org.kabeja.parser.DXFParser;
 import org.kabeja.parser.ParseException;
 import org.kabeja.parser.Parser;
 import org.kabeja.parser.ParserBuilder;
-import org.kabeja.parser.table.DXFLayerTableHandler;
 import org.kabeja.svg.ui.SVGViewUIComponent;
 import org.kabeja.ui.UIException;
 
+import javax.media.opengl.GLAutoDrawable;
+import javax.media.opengl.GLCapabilities;
+import javax.media.opengl.GLEventListener;
+import javax.media.opengl.GLProfile;
+import javax.media.opengl.awt.GLCanvas;
+import javax.media.opengl.awt.GLJPanel;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
@@ -32,14 +32,23 @@ import java.util.ResourceBundle;
 
 public class baseGUI implements Initializable {
     /**Constructor*/
-    public baseGUI(){   }
+    public baseGUI(){
+    }
 
     /**Atribtuos*/
+
     protected DXFDocument doc=new DXFDocument();
-    private SVGViewUIComponent DXFViewer=new SVGViewUIComponent();
+    protected SVGViewUIComponent DXFViewer=new SVGViewUIComponent();
     protected File saveFile;
+    final GLProfile profile = GLProfile.get(GLProfile.GL2);
+    GLCapabilities capabilities = new GLCapabilities(profile);
+    protected GLCanvas glCanvas = new GLCanvas(capabilities);
+
+
     @FXML
     private SwingNode swingNode=new SwingNode();
+    @FXML
+    private SwingNode swingNodegl =new SwingNode();
 
      /**Metodos*/
     @FXML
@@ -51,11 +60,39 @@ public class baseGUI implements Initializable {
         if(saveFile==null){
             return;
         }
+
         DXFReader(saveFile);
+
     }
     private void DXFReader(File path) {
         Parser parser = ParserBuilder.createDefaultParser();
-        SVGViewUIComponent DXFViewer = new SVGViewUIComponent();
+        DXFViewer = new SVGViewUIComponent();
+
+        glCanvas.setSize(1000,1000);
+        glCanvas.addGLEventListener(new GLEventListener() {
+            @Override
+            public void init(GLAutoDrawable glAutoDrawable) {
+            }
+
+            @Override
+            public void dispose(GLAutoDrawable glAutoDrawable) {
+            }
+
+            @Override
+            public void display(GLAutoDrawable glAutoDrawable) {
+            }
+
+            @Override
+            public void reshape(GLAutoDrawable glAutoDrawable, int i, int i1, int i2, int i3) {
+            }
+        });
+
+        GLJPanel gljPanel = new GLJPanel();
+        gljPanel.add(glCanvas);
+        //gljPanel.setBackground(Color.blue);
+        gljPanel.setSize(500,500);
+
+
         try {
             parser.parse(path.getAbsolutePath(), DXFParser.DEFAULT_ENCODING);
         } catch (ParseException e) {
@@ -63,19 +100,6 @@ public class baseGUI implements Initializable {
         }
         doc = parser.getDocument();
 
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-
-                swingNode.setContent(DXFViewer.getView());
-                try {
-                    DXFViewer.showDXFDocument(doc);
-                } catch (UIException e) {
-                    e.printStackTrace();
-                }
-
-            }
-        });
 
         Iterator<DXFLayer> layerIt = doc.getDXFLayerIterator();
         DXFLayer LayerOne = doc.getDXFLayer("CN_Z1_3107");
@@ -87,6 +111,21 @@ public class baseGUI implements Initializable {
         System.out.println(PoliList.get(0).getVertex(1).getBounds().getMinimumY());
         System.out.println(PoliList.get(0).getElevation());
         getCoordenadas(PoliList);
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                swingNode.setContent(DXFViewer.getView());
+                //gljPanel.add(new JButton("Hablamos"));
+                //gljPanel.add(glCanvas);
+                swingNodegl.setContent(gljPanel);
+                try {
+                    DXFViewer.showDXFDocument(doc);
+                } catch (UIException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 
     protected List<double[]> ListCoord = new ArrayList<double[]>();
@@ -115,5 +154,6 @@ public class baseGUI implements Initializable {
             }
         });
     }
+
 }
 
