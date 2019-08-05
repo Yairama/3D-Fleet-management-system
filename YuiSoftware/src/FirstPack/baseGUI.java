@@ -5,6 +5,7 @@ import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.stage.FileChooser;
 import org.kabeja.dxf.*;
 import org.kabeja.parser.DXFParser;
@@ -49,6 +50,8 @@ public class baseGUI implements Initializable {
     private SwingNode swingNode=new SwingNode();
     @FXML
     private SwingNode swingNodegl =new SwingNode();
+    @FXML
+    private ComboBox combo1=new ComboBox();
 
      /**Metodos*/
     @FXML
@@ -102,6 +105,10 @@ public class baseGUI implements Initializable {
 
 
         Iterator<DXFLayer> layerIt = doc.getDXFLayerIterator();
+        while(layerIt.hasNext())
+        {
+            combo1.getItems().add(layerIt.next().getName());
+        }
         DXFLayer LayerOne = doc.getDXFLayer("CN_Z1_3107");
         System.out.println(LayerOne.hasDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE));
         List<DXFLWPolyline> PoliList = LayerOne.getDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE);
