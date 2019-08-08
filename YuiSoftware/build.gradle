@@ -1,0 +1,25 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+repositories {
+    mavenCentral()
+    maven { url = "http://maven.jzy3d.org/releases" }
+}
+
+dependencies {
+    implementation 'org.fxyz3d:fxyz3d:0.5.1'
+    implementation 'org.fxyz3d:fxyz3d-client:0.5.1'
+    implementation 'org.fxyz3d:fxyz3d-importers:0.5.1'
+    compile files('src/main/libs/kabeja-0.4.jar')
+    compile files('src/main/libs/kabeja-svg-0.4.jar')
+}
+
+
+javafx {
+    version = "11.0.2"
+    modules = [ 'javafx.controls', 'javafx.fxml','javafx.swing']
+}
+
+mainClassName = 'uni.cmmsb.MainYui'
