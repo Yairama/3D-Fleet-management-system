@@ -85,18 +85,25 @@ public class baseGUI implements Initializable {
     }
 
     @FXML
-    private void btnGraficar(){
+    private void btnGraficarPolilineas(){
         System.out.println(cmbLayouts.getValue());
         DXFLayer LayerOne = doc.getDXFLayer(cmbLayouts.getValue());
         System.out.println(LayerOne.hasDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE));
         List<DXFLWPolyline> PoliList = LayerOne.getDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE);
-        System.out.println(PoliList);
         GraphGUI DXFGraficador = new GraphGUI(PoliList, bpnMain);
 
         bpnMain.getScene().setOnKeyPressed(event -> {
             DXFGraficador.eventKeys(event);
         });
     }
+    @FXML
+    private void btnGraficarModelo3D(){
+        DXFLayer LayerOne = doc.getDXFLayer(cmbLayouts.getValue());
+        List<DXFLWPolyline> PoliList = LayerOne.getDXFEntities(DXFConstants.ENTITY_TYPE_LWPOLYLINE);
+        points4Delaunay points4Delaunay = new points4Delaunay(PoliList);
+
+    }
+
 
 
     @Override

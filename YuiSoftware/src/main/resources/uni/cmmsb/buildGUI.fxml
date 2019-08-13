@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
@@ -26,7 +27,7 @@
           <RowConstraints vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ToolBar onDragDetected="#btnGraficar" prefHeight="40.0" prefWidth="200.0">
+            <ToolBar onDragDetected="#btnGraficarPolilineas" prefHeight="40.0" prefWidth="200.0">
                <items>
                   <MenuBar>
                     <menus>
@@ -63,6 +64,11 @@
                       <Tab fx:id="tbnDXFView" closable="false" text="DXF VIEW">
                         <BorderPane fx:id="bpnMain" />
                       </Tab>
+                        <Tab text="Untitled Tab">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </Tab>
                     </tabs>
                   </TabPane>
                   <GridPane>
@@ -93,7 +99,12 @@
                               <ComboBox fx:id="cmbLayouts" prefWidth="150.0" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
-                        <Button mnemonicParsing="false" onAction="#btnGraficar" text="Graficar" GridPane.rowIndex="2" />
+                        <HBox GridPane.rowIndex="2">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#btnGraficarPolilineas" text="Graficar Polilineas" />
+                              <Button mnemonicParsing="false" onAction="#btnGraficarModelo3D" text="Graficar Modelo 3D" />
+                           </children>
+                        </HBox>
                      </children>
                   </GridPane>
                </children>

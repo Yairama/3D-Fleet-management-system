@@ -33,7 +33,7 @@ public class GraphGUI {
     protected Rotate zRotate;
 
     public GraphGUI(List<DXFLWPolyline> polylines, BorderPane parent) {
-        baseGUI primaryBase = new baseGUI();
+        //baseGUI primaryBase = new baseGUI();
         for (int i=0; i<polylines.size();i++){
 
             for (int k=0; k<polylines.get(i).getVertexCount();k++) {
