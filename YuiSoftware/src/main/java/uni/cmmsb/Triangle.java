@@ -5,7 +5,9 @@ import java.util.Arrays;
 
 public  class Triangle{
 
-    Point p1,p2,p3;
+    Point p1;
+    Point p2;
+    Point p3;
     Edge e1, e2, e3;
     int id;
 

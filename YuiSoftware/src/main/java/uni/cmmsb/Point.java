@@ -30,6 +30,12 @@ public class Point implements Comparable<Point>{
         this.z = z;
         this.id = id;
     }
+    Point(double x, double y, double z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+
+    }
 
     @Override
     public boolean equals(Object obj) {
