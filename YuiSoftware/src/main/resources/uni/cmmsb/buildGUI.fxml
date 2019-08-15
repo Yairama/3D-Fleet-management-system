@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -15,6 +14,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.CheckComboBox?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uni.cmmsb.baseGUI">
    <children>
@@ -27,7 +27,7 @@
           <RowConstraints vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ToolBar onDragDetected="#btnGraficarPolilineas" prefHeight="40.0" prefWidth="200.0">
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
                <items>
                   <MenuBar>
                     <menus>
@@ -77,12 +77,13 @@
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <GridPane GridPane.rowIndex="1">
+                        <GridPane GridPane.rowIndex="2">
                           <columnConstraints>
                             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -96,12 +97,14 @@
                           </rowConstraints>
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione el Layout" />
-                              <ComboBox fx:id="cmbLayouts" prefWidth="150.0" GridPane.columnIndex="1" />
+                              <CheckComboBox fx:id="chmbLayouts" GridPane.columnIndex="1" />
+                              <CheckComboBox fx:id="chmbEntidades" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Seleccione las entidades" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
-                        <HBox GridPane.rowIndex="2">
+                        <HBox GridPane.rowIndex="3">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#btnGraficarPolilineas" text="Graficar Polilineas" />
+                              <Button mnemonicParsing="false" onAction="#btnGraficarDibujo" text="Graficar Dibujo" />
                               <Button mnemonicParsing="false" onAction="#btnGraficarModelo3D" text="Graficar Modelo 3D" />
                            </children>
                         </HBox>

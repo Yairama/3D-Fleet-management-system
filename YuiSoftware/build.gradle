@@ -12,8 +12,10 @@ dependencies {
     implementation 'org.fxyz3d:fxyz3d:0.5.1'
     implementation 'org.fxyz3d:fxyz3d-client:0.5.1'
     implementation 'org.fxyz3d:fxyz3d-importers:0.5.1'
+    implementation 'org.controlsfx:controlsfx:11.0.0'
     compile files('src/main/libs/kabeja-0.4.jar')
     compile files('src/main/libs/kabeja-svg-0.4.jar')
+
 }
 
 
