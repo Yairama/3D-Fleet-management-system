@@ -123,17 +123,18 @@ public class baseGUI implements Initializable {
         for (String checkedItem : checkedItems){
             switch (checkedItem){
                 case "Polilineas":
-                    polylineGetter(layerList);
+                    point3DFinalList.addAll(polylineGetter(layerList));
                     break;
                 case "LWPolilineas":
-                    lwpolylineGetter(layerList);
+                    point3DFinalList.addAll(lwpolylineGetter(layerList));
                     break;
                 case "Puntos":
-                    pointsGetter(layerList);
+                    point3DFinalList.addAll(pointsGetter(layerList));
                     break;
             }
         }
 
+        
 
     }
 
