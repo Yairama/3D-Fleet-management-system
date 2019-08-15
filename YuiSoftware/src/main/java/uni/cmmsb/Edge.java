@@ -1,44 +1,26 @@
 package uni.cmmsb;
 
-class Edge {
-
-    Point p1, p2;
-    Triangle t;
-
-    Edge(Point p1, Point p2, Triangle t) {
-        this.t = t;
-        //from lowest Point.id to highest
-        if (p1.id < p2.id) {
-            this.p1 = p1;
-            this.p2 = p2;
-        } else if (p1.id > p2.id) {
-            this.p1 = p2;
-            this.p2 = p1;
-        } else {
-            try {
-                System.out.println("Napaka pri tockah: " + p1 + p2);
-                throw new Exception();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+public class Edge
+{
+    private Point pl;
+    private Point pr;
+    public Edge(Point pl, Point pr) {
+        this.pl = pl;
+        this.pr = pr;
     }
-    Edge(Point p1, Point p2) {
-        this.t = t;
-        //from lowest Point.id to highest
-        if (p1.id < p2.id) {
-            this.p1 = p1;
-            this.p2 = p2;
-        } else if (p1.id > p2.id) {
-            this.p1 = p2;
-            this.p2 = p1;
-        } else {
-            try {
-                System.out.println("Napaka pri tockah: " + p1 + p2);
-                throw new Exception();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+
+    public Point Pl() {
+        return this.pl;
     }
+
+
+    public Point Pr() {
+        return this.pr;
+    }
+
+    public void Set(Point p1, Point p2) {
+        this.pl = p1;
+        this.pr = p2;
+    }
+
 }

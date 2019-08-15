@@ -1,72 +1,46 @@
 package uni.cmmsb;
 
-public class Point implements Comparable<Point>{
+public class Point
+{
+    private double x;
+    private double y;
+    private double angle;
+    public Point() { }
+    public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
 
-    double x;
-
-    public double getX() {
+    public double X() {
         return x;
     }
 
-    public double getY() {
+    public double Y() {
         return y;
     }
 
-    public double getZ() {
-        return z;
+    public void setAngle(double angle){
+        this.angle = angle;
     }
 
-    public int getId() {
-        return id;
+    public double getAngle(){
+        return this.angle;
     }
 
-    double y;
-    double z;
-    int id;
-
-    Point(double x, double y, double z, int id) {
+    public void Set(double x, double y) {
         this.x = x;
         this.y = y;
-        this.z = z;
-        this.id = id;
-    }
-    Point(double x, double y, double z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        Point p = (Point) obj;
-        return (p.x == this.x && p.y == this.y && p.z == this.z);
+    public void SetAngle(double x) {
+        this.angle = x;
     }
 
-    @Override
-    public int hashCode() {
-//            int hash = 7;
-//            hash = 71 * hash + Double.valueOf(this.x).hashCode();
-//            hash = 71 * hash + Double.valueOf(this.y).hashCode();
-//            hash = 71 * hash + Double.valueOf(this.z).hashCode();
-//            return hash;
-
-        return id;
+    public Boolean Equals(Point other) {
+        return (this.x == other.x && this.y == other.y);
     }
 
-    @Override
-    public String toString() {
-        return "P" + id;// + "|" + "x= " + this.x + ", y = " + this.y + ", z = " + this.z;
-    }
-
-    @Override
-    public int compareTo(Point o) {
-        if (this.x > o.x ) {
-            return 1;
-        } else {
-            return -1;
-        }
-    }
+    public String ToString() {
+    return "(" + this.x + "," + this.y + ")";
 }
-
-
+}
