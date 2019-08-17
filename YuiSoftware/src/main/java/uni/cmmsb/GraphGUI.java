@@ -8,7 +8,8 @@ import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Translate;
 
 
-public class GraphGUI {
+public class
+GraphGUI {
 
     protected SubScene scene;
     protected Group sceneRoot;
