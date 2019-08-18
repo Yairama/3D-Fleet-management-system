@@ -293,7 +293,7 @@ public class TriangulacionFinal {
     }
 
 
-    public static void main(String[] args) {
+public TriangulacionFinal(){
         // TODO code application logic here
 
         Punto [] nube = new Punto [12];
