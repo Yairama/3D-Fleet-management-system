@@ -270,6 +270,7 @@ public class TriangulacionFinal {
                 break;
             }
         }
+        // el pivote de la izquierda va a ser el de la nube1 y no hay nube1 sin nube2, por eso siempre un pivote izquierdo tendra uno derecho
         //Unimos los dos pivotes (Matriz simétrica, en ambos lados de la matriz)
         System.out.println();
         System.out.println("Union de pivotes");
@@ -290,10 +291,14 @@ public class TriangulacionFinal {
         System.out.println();
         System.out.println("Se acabó");
 
-    }
+        }
 
 
-public TriangulacionFinal(){
+
+
+    public static void main(String[] args) {
+
+
         // TODO code application logic here
 
         Punto [] nube = new Punto [12];
@@ -316,5 +321,12 @@ public TriangulacionFinal(){
         Vector<Punto> cierre = new Vector<>();
         int [][] uniones = new int [nube.length][nube.length];
         triangula(cierre, uniones,nube, new Punto(1000, 1000, 1000));
+        for (int i=0; i<nube.length;i++){
+            System.out.println("");
+            for (int j=0; j<nube.length;j++) {
+
+                System.out.print(uniones[i][j] + " ");
+            }
+
     }
-}
+}}
