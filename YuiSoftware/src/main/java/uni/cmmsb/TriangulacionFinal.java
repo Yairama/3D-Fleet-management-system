@@ -390,9 +390,9 @@ public   static ArrayList<Triangulo> sacartriangulos(int [][] uniones, Punto nub
                     for (int k=0; k<uniones.length;k++){
                         if ((uniones[j][k]==1)&(uniones[k][i]==1)){
                             Triangulo nuevotriangulo=new Triangulo(nube[i], nube[j], nube[k], indice);
-                            if (!serepite(triangulos, nuevotriangulo))
+                            if (!serepite(triangulos, nuevotriangulo)){
                             triangulos.add(new Triangulo(nube[i], nube[j], nube[k], indice));
-                            indice++;
+                            indice++;}
                         }
                     }
                 }
