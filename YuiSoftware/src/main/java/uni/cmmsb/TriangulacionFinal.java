@@ -1,5 +1,8 @@
 package uni.cmmsb;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Vector;
 
 public class TriangulacionFinal {
@@ -223,6 +226,49 @@ public class TriangulacionFinal {
             }
         }
     }
+    public static boolean serepite(List<Triangulo> triangulos,Triangulo triangulito){
+        boolean repetido=false;
+        Punto p1=triangulito.getpunto1();
+        Punto p2=triangulito.getpunto2();
+        Punto p3=triangulito.getpunto3();
+        for(Triangulo triangulo:triangulos){
+            Punto pp1=triangulo.getpunto1();
+            Punto pp2=triangulo.getpunto2();
+            Punto pp3=triangulo.getpunto3();
+            if(p1==pp2){
+                if((p2==pp3)&(p3==pp1)){
+                    repetido=true;
+                }
+                if((p2==pp1)&(p3==pp3)){
+                    repetido=true;
+                }
+                if((p3==pp3)&(p2==pp1)){
+                    repetido=true;
+                }
+                if((p3==pp1)&(p2==pp3)){
+                    repetido=true;
+                }
+            }
+            else if (p1==pp3){
+                if((p2==pp1)&(p3==pp2)){
+                    repetido=true;
+                }
+                if((p2==pp2)&(p3==pp1)){
+                    repetido=true;
+                }
+                if((p3==pp1)&(p2==pp2)){
+                    repetido=true;
+                }
+                if((p3==pp2)&(p2==pp1)){
+                    repetido=true;
+                }
+
+            }
+
+
+        }
+
+        return repetido;}
     public static void triangula (Vector<Punto> cierre, int [][] uniones, Punto nube [], Punto limite) {
         System.out.println();
         System.out.println("Siguiente nivel");
@@ -315,18 +361,44 @@ public class TriangulacionFinal {
         nube[10] = new Punto (11, 0.5, 10);
         nube[11] = new Punto (12, 2, 11);
 
-
-
         quickSort(nube, 0, nube.length - 1);
         Vector<Punto> cierre = new Vector<>();
         int [][] uniones = new int [nube.length][nube.length];
         triangula(cierre, uniones,nube, new Punto(1000, 1000, 1000));
-        for (int i=0; i<nube.length;i++){
-            System.out.println("");
-            for (int j=0; j<nube.length;j++) {
+        ArrayList<Triangulo> triangulos=new ArrayList<Triangulo>();
+        triangulos=sacartriangulos(uniones, nube);
+        for(int i=0;i<triangulos.size();i++) {
+            System.out.println("triangulo " + i + " tiene puntos de indice: " + triangulos.get(i).getpunto1().indice +" " +triangulos.get(i).getpunto2().indice + " " + triangulos.get(i).getpunto3().indice);
+        }
+        //for (int i=0; i<nube.length;i++){
+          //  System.out.println("");
+          //  for (int j=0; j<nube.length;j++) {
+          //      System.out.print(uniones[i][j] + " ");
+          //  }
 
-                System.out.print(uniones[i][j] + " ");
+
+   // }
+}
+public   static ArrayList<Triangulo> sacartriangulos(int [][] uniones, Punto nube [] ){
+        ArrayList<Triangulo> triangulos=new ArrayList<Triangulo>();
+        int indice=1;
+        for (int i=0; i<uniones.length; i++){
+            for(int j=i+1;j<uniones.length;j++){
+                if (uniones[i][j]==1) {
+                    int punto1=i;
+                    int punto2=j;
+                    for (int k=0; k<uniones.length;k++){
+                        if ((uniones[j][k]==1)&(uniones[k][i]==1)){
+                            Triangulo nuevotriangulo=new Triangulo(nube[i], nube[j], nube[k], indice);
+                            if (!serepite(triangulos, nuevotriangulo))
+                            triangulos.add(new Triangulo(nube[i], nube[j], nube[k], indice));
+                            indice++;
+                        }
+                    }
+                }
             }
+        }
 
-    }
-}}
+
+return triangulos;}
+}
