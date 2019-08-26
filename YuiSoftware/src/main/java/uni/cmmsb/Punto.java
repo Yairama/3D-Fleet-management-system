@@ -3,16 +3,21 @@ package uni.cmmsb;
 public class Punto {
     public double x;
     public double y;
+    public double z;
     public int indice;
 
-    public Punto(double x, double y, int indice) {
+    public Punto(double x, double y,double z, int indice) {
         this.x = x;
         this.y = y;
+        this.z=z;
         this.indice = indice;
     }
 
     public double getX () {
         return this.x;
+    }
+    public double getZ () {
+        return this.z;
     }
 
 

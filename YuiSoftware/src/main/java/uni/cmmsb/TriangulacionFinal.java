@@ -264,8 +264,23 @@ public class TriangulacionFinal {
                 }
 
             }
-
-
+            else if (p1==pp1){
+                if((p2==pp2)&(p3==pp3)){
+                    repetido=true;
+                }
+                if((p2==pp3)&(p3==pp2)){
+                    repetido=true;
+                }
+                if((p3==pp2)&(p2==pp3)){
+                    repetido=true;
+                }
+                if((p3==p3)&(p2==pp2)){
+                    repetido=true;
+                }
+                if((p3==pp2)&(p2==pp3)){
+                    repetido=true;
+                }
+            }
         }
 
         return repetido;}
@@ -306,7 +321,7 @@ public class TriangulacionFinal {
         int pivote1 = nube1[nube1.length - 1].getIndice();
 
         //Triangulo los subproblemas
-        triangula (cierre, uniones, nube1, new Punto(1000, 1000, 1000));
+        triangula (cierre, uniones, nube1, new Punto(1000, 1000, 1000,100000000));
         triangula (cierre, uniones, nube2, nube1[nube1.length-1]);
 
         //Localizamos los dos pivotes
@@ -348,23 +363,23 @@ public class TriangulacionFinal {
         // TODO code application logic here
 
         Punto [] nube = new Punto [12];
-        nube[0] = new Punto (2.5, 8.5, 0);
-        nube[1] = new Punto (0.5, 6, 1);
-        nube[2] = new Punto (1, 7.5, 2);
-        nube[3] = new Punto (6, 4, 3);
-        nube[4] = new Punto (3, 1, 4);
-        nube[5] = new Punto (7, 0.25, 5);
-        nube[6] = new Punto (2, 2.5, 6);
-        nube[7] = new Punto (9, 1.5, 7);
-        nube[8] = new Punto (4.5, 9.5, 8);
-        nube[9] = new Punto (8, 6.5, 9);
-        nube[10] = new Punto (11, 0.5, 10);
-        nube[11] = new Punto (12, 2, 11);
+        nube[0] = new Punto (2.5, 8.5,0, 0);
+        nube[1] = new Punto (0.5, 6,0, 1);
+        nube[2] = new Punto (1, 7.5,0, 2);
+        nube[3] = new Punto (6, 4,0, 3);
+        nube[4] = new Punto (3, 1,0, 4);
+        nube[5] = new Punto (7, 0.25,0, 5);
+        nube[6] = new Punto (2, 2.5,0, 6);
+        nube[7] = new Punto (9, 1.5,0, 7);
+        nube[8] = new Punto (4.5, 9.5,0, 8);
+        nube[9] = new Punto (8, 6.5,0, 9);
+        nube[10] = new Punto (11, 0.5,0, 10);
+        nube[11] = new Punto (12, 2,0, 11);
 
         quickSort(nube, 0, nube.length - 1);
         Vector<Punto> cierre = new Vector<>();
         int [][] uniones = new int [nube.length][nube.length];
-        triangula(cierre, uniones,nube, new Punto(1000, 1000, 1000));
+        triangula(cierre, uniones,nube, new Punto(1000, 1000,0, 100000000));
         ArrayList<Triangulo> triangulos=new ArrayList<Triangulo>();
         triangulos=sacartriangulos(uniones, nube);
         for(int i=0;i<triangulos.size();i++) {
