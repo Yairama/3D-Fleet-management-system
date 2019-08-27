@@ -6,6 +6,20 @@ import java.util.List;
 import java.util.Vector;
 
 public class TriangulacionFinal {
+    List<Punto> puntos=new ArrayList<>();
+    public TriangulacionFinal(List<Punto> puntos) {
+        this.puntos = puntos;
+        Punto [] nube = new Punto [puntos.size()];
+        nube = puntos.toArray(nube);
+        Vector<Punto> cierre = new Vector<>();
+        int [][] uniones = new int [nube.length][nube.length];
+        triangula(cierre, uniones,nube, new Punto(1, 1,0, 1));
+        ArrayList<Triangulo> triangulos=new ArrayList<Triangulo>();
+        triangulos=sacartriangulos(uniones, nube);
+        for(int i=0;i<triangulos.size();i++) {
+            System.out.println("triangulo " + i + " tiene puntos de indice: " + triangulos.get(i).getpunto1().indice +" " +triangulos.get(i).getpunto2().indice + " " + triangulos.get(i).getpunto3().indice);
+        }
+    }
 
 
     //Ordenar nube de puntos de derecha a izquierda
