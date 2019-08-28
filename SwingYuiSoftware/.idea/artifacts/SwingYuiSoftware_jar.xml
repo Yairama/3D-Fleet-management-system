@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SwingYuiSoftware:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SwingYuiSoftware_jar</output-path>
+    <root id="archive" name="SwingYuiSoftware.jar">
+      <element id="module-output" name="SwingYuiSoftware" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/batik-all.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/js.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/junit.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/kabeja-svg-0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/kabeja-xslt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/miethxml-toolkit.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/miethxml-ui.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/pdf-transcoder.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/xml-apis-ext.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/xml-apis.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/kabeja-0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/jars/lwjgl.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/jars/lwjgl_util.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/jars/slick-util.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
