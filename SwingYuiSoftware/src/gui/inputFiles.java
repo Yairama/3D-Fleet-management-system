@@ -15,9 +15,9 @@ import java.io.FileNotFoundException;
 public class inputFiles {
     public static DXFDocument doc;
     private Parser parser = ParserBuilder.createDefaultParser();
-    private FileInputStream fileInputStream;
+    public static  JFileChooser jfilechooser;
     public inputFiles() {
-        JFileChooser jfilechooser = new JFileChooser();
+        jfilechooser = new JFileChooser();
         jfilechooser.setFileFilter(new FileNameExtensionFilter("*.dxf","DXF"));
         jfilechooser.showOpenDialog(MarcoPrincipal.principalPane);
         if(jfilechooser.getSelectedFile() == null) {

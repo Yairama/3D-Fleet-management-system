@@ -5,10 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MarcoPrincipal extends JFrame{
-     private int width;
-     private int height;
-     private String Title;
-     private Dimension dimension;
      private JMenuBar menuBar = new JMenuBar();
      private JMenu jMenuFile= new JMenu("file");
      private JMenu jMenuAbout = new JMenu("About");

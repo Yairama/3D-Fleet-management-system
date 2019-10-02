@@ -94,7 +94,6 @@ class controlPane extends JPanel {
 
         dxfGraph.addActionListener(e->{
             if(inputFiles.doc==null){return;}
-            reader.setLists();
             reader.setTotalPoints();
         });
     }
