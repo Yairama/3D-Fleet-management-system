@@ -16,7 +16,7 @@ public class FileCreator {
                 PrintWriter printWriter = new PrintWriter("input.txt","UTF-8");
 
                 for(Point point : totalPoints){
-                    printWriter.println(point.getX()+";"+point.getY()+";"+point.getZ());
+                    printWriter.println(point.getX()+" "+point.getY()+" "+point.getZ());
                 }
                 printWriter.close();
             } catch (Exception e) {

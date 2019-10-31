@@ -1,10 +1,10 @@
 package gui;
 
-import objects.Point;
-import org.kabeja.dxf.*;
+        import objects.Point;
+        import org.kabeja.dxf.*;
 
-import java.io.FileReader;
-import java.util.*;
+        import java.io.FileReader;
+        import java.util.*;
 
 public class DXFReader {
 

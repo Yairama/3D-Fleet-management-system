@@ -7,6 +7,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class FileRead {
@@ -49,6 +51,21 @@ public class FileRead {
                 linea = br.readLine();
             }
             br.close();
+            Point minxpoint =  Collections.min(totalPoints, Comparator.comparing(s -> s.getX()));
+            Point maxxpoint =  Collections.max(totalPoints, Comparator.comparing(s -> s.getX()));
+            Point minypoint =  Collections.min(totalPoints, Comparator.comparing(s -> s.getY()));
+            Point maxypoint =  Collections.max(totalPoints, Comparator.comparing(s -> s.getY()));
+            Point minzpoint =  Collections.min(totalPoints, Comparator.comparing(s -> s.getZ()));
+            Point maxzpoint =  Collections.max(totalPoints, Comparator.comparing(s -> s.getZ()));
+            double rangex=maxxpoint.getX()-minxpoint.getX();
+            double rangey=maxypoint.getY()-minypoint.getY();
+            double rangez=maxzpoint.getZ()-minzpoint.getZ();
+
+            System.out.println(" range x: " +  rangex + " range y: " + rangey + " range z: " + rangez);
+            System.out.println(" max x " +  maxxpoint.getX() + " minx: " + minxpoint.getX() + " miny " + minypoint.getY()+" minz: " + minzpoint.getZ());
+
+
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
