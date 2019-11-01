@@ -7,13 +7,13 @@ import java.util.Scanner;
 import entities.Entity;
 import entities.Punto;
 
-public class Readfile {
+public class Readfile3 {
 	private Scanner x;
 
 	
 	public void openFile() {
 	try {
-		x=new Scanner(new File("input.txt"));
+		x=new Scanner(new File("input3.txt"));
 	}
 	catch(Exception e) {
 		System.out.println("could not find file");
