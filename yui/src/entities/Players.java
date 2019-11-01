@@ -7,9 +7,9 @@
 
 package entities;
 
-
 import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
 import entities.Punto;
@@ -23,7 +23,7 @@ import terrains.Terrain;
 
 public class Players extends Entity{
 	
-	private static final float RUN_SPEED=50;
+	private static final float RUN_SPEED=200;
 	private static final float TURN_SPEED=50;
 	private static final float GRAVITY=-50;
 	private static final float JUMP_POWER=30;
@@ -33,8 +33,6 @@ public class Players extends Entity{
 	private float currentSpeed=0;
 	private float currentTurnSpeed=0;
 	private float upwardsSpeed=0;
-	private double distance1;
-	private double time;
 	private int count=0;
 	private double actualdistance;
 	
@@ -90,21 +88,21 @@ public class Players extends Entity{
 			 }
 			 if(Keyboard.isKeyDown(Keyboard.KEY_J)) {
 					this.currentSpeed=RUN_SPEED;}
-			 //if(Keyboard.isKeyDown(Keyboard.KEY_K)) {
-			//		this.currentSpeed=-RUN_SPEED;}
 			 if(Keyboard.isKeyDown(Keyboard.KEY_L)) {
 					this.currentSpeed=0;}
 			 if (count==Pointlist.size()-2){
 				 if (Math.sqrt(Math.pow(super.getPosition().x-punto2.x, 2)+Math.pow(super.getPosition().z-punto2.z, 2))<RUN_SPEED/100) {
-					 this.currentSpeed=0;
+					 //this.currentSpeed=0;
+					 Collections.reverse(Pointlist);
+					 count=0;
 				 }	 
 			 }
 			 if (count!=Pointlist.size()-2){
-			 distance1=Math.sqrt(Math.pow(punto1.x-punto2.x, 2)+Math.pow(punto1.z-punto2.z, 2));
 			 actualdistance=Math.sqrt(Math.pow(super.getPosition().x-punto2.x, 2)+Math.pow(super.getPosition().z-punto2.z, 2));
-			// System.out.println(actualdistance + " count : " + count + " roty: " + this.rotY  + " dx: " + (punto2.x-super.getPosition().x) +  " dz: " + (punto2.z-super.getPosition().z) + " xd : "+(90+(90-Math.toDegrees(Math.atan((punto2.z-super.getPosition().z)/(punto2.x-super.getPosition().x))))));
+			 //System.out.println(actualdistance + " count : " + count + " roty: " + this.rotY  + " dx: " + (punto2.x-super.getPosition().x) +  " dz: " + (punto2.z-super.getPosition().z) + " xd : "+(90+(90-Math.toDegrees(Math.atan((punto2.z-super.getPosition().z)/(punto2.x-super.getPosition().x))))));
 			 if(actualdistance<(RUN_SPEED/100)) {
 				 count++;
+				 
 			 }
 			 }
 			 
@@ -125,25 +123,6 @@ public class Players extends Entity{
 					e.printStackTrace();
 				}*/
 
-		
-	}
-	private void Runto(Punto punto1, Punto punto2) {
-		
-		distance1=Math.sqrt(Math.pow(punto1.x-punto2.x, 2)+Math.pow(punto1.z-punto2.z, 2));
-		time=distance1/RUN_SPEED;
-		long timeinmiliseconds=Math.round(time*1000);
-		
-		int timeinnanoseconds=(int) Math.round(time*1000000000-timeinmiliseconds*1000000);
-		
-		try {
-			Thread.sleep(timeinmiliseconds, timeinnanoseconds);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		
-		
 		
 	}
 	

@@ -9,11 +9,25 @@ import entities.Punto;
 
 public class Readfile {
 	private Scanner x;
-
+	private String filename;
+	private ArrayList<Punto> Pointlist=new ArrayList<Punto>();
+	public Readfile(String filename) {
+		
+		this.filename=filename;
+		openFile();
+		GetList();
+		closeFile();
+		
+	}
+	public ArrayList<Punto> getPointlist(){
+		
+		return Pointlist;
+		
+	}
 	
 	public void openFile() {
 	try {
-		x=new Scanner(new File("input.txt"));
+		x=new Scanner(new File(filename));
 	}
 	catch(Exception e) {
 		System.out.println("could not find file");
@@ -21,13 +35,10 @@ public class Readfile {
 
 }
 	public ArrayList<Punto> GetList() {
-		ArrayList<Punto> Pointlist = new ArrayList<Punto>();
 		while(x.hasNext()) {
-			String b =x.next();
 			String a =x.next();
-			String c =x.next();
+			String b =x.next();
 			Punto punto=new Punto(Double.parseDouble(a),Double.parseDouble(b));
-			//System.out.println(a);
 			Pointlist.add(punto);
 		}
 		return Pointlist;

@@ -8,7 +8,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.List;
-
 public class FileCreator {
         public FileCreator(List<Point> totalPoints){
             try {
