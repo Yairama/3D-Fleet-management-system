@@ -1,3 +1,9 @@
+/* Copyright (C) 2019 Huarcaya Rodriguez Julio Ricardo
+ * This program is not free software: you can not redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or 
+ * any later version.
+ */
 package renderEngine;
 
 import java.util.ArrayList;
@@ -24,7 +30,7 @@ public class MasterRenderer {
 
 	private static final float FOV = 70;
 	private static final float NEAR_PLANE = 0.1f;
-	private static final float FAR_PLANE = 1000;
+	private static final float FAR_PLANE = 10000;
 
 	public static final float RED = 0.1f;
 	public static final float GREEN = 0.4f;

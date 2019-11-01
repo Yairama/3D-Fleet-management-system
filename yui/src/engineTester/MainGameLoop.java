@@ -28,8 +28,6 @@ import textures.TerrainTexturePack;
 import toolbox.Maths;
 import toolbox.MousePicker;
 import toolbox.Readfile;
-import toolbox.Readfile2;
-import toolbox.Readfile3;
 import water.WaterFrameBuffers;
 import water.WaterRenderer;
 import water.WaterShader;
@@ -42,67 +40,73 @@ import entities.Players;
 import entities.Punto;
 import guis.GuiRenderer;
 import guis.GuiTexture;
-
+/* Copyright (C) 2019 Huarcaya Rodriguez Julio Ricardo
+ * This program is not free software: you can not redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or 
+ * any later version.
+ */
 public class MainGameLoop {
 
 	public static void main(String[] args) {
 
 		DisplayManager.createDisplay();
 		Loader loader = new Loader();
-		double trz = Maths.trx(762546.5153617859);
-		double trx = Maths.trz(9251158.233398438);
+		//double trz = Maths.trx(762546.5153617859);
+		//double trx = Maths.trz(9251158.233398438);
 		//rangox: 2003.65771484375
 		//rangoy: 1670.9846382141113
 		//miny=9251158.233398438
 		//minx: 762546.5153617859
-		
-		Readfile r= new Readfile();
-		r.openFile();
-		ArrayList<Punto> Pointlist=r.GetList();
-		r.closeFile();
-		for (Punto punto:Pointlist) {
-			punto.x=(float) (punto.x-trx);
-			punto.z=(float) ((2003.65771484375*(punto.z-trz)/1670.9846382141113 )-2003.65771484375);
-			//punto.z=(float)((punto.z-trz));
-			
-		}
-		Readfile2 s= new Readfile2();
-		s.openFile();
-		ArrayList<Punto> Pointlist2=s.GetList();
-		s.closeFile();
-		for (Punto punto:Pointlist2) {
-			punto.x=(float) (punto.x-trx);
-			punto.z=(float) ((2003.65771484375*(punto.z-trz)/1670.9846382141113 )-2003.65771484375);
-			//punto.getZ=(float)((punto.z-trz));
-			
-		}
-		Readfile3 t= new Readfile3();
-		t.openFile();
-		ArrayList<Punto> Pointlist3=t.GetList();
-		t.closeFile();
-		for (Punto punto:Pointlist3) {
-			punto.x=(float) (punto.x-trx);
-			punto.z=(float) ((2003.65771484375*(punto.z-762546.5153617859)/1670.9846382141113 )-2003.65771484375);
-			//punto.z=(float)((punto.z-762546.5153617859-2003.65771484375));
-			
-		}
-		
+		Readfile r= new Readfile("1.txt");
+		ArrayList<Punto> Pointlist = r.getPointlist();
+		Readfile a= new Readfile("2.txt");
+		ArrayList<Punto> Pointlist2 = a.getPointlist();
+		Readfile b= new Readfile("3.txt");
+		ArrayList<Punto> Pointlist3 = b.getPointlist();
+		Readfile c= new Readfile("4.txt");
+		ArrayList<Punto> Pointlist4 = c.getPointlist();
+		Readfile d= new Readfile("5.txt");
+		ArrayList<Punto> Pointlist5 = d.getPointlist();
 
+		
+		
+		/*for (Punto punto:Pointlist) {
+			punto.x=(float) (punto.x-trx);
+			punto.z=(float) ((2003.65771484375*(punto.z-trz)/1670.9846382141113 )-2003.65771484375);	
+		}*/
+		//Readfile s= new Readfile("2.txt");
+		//ArrayList<Punto> Pointlist2 = s.getPointlist();
+		/*for (Punto punto:Pointlist2) {
+			punto.x=(float) (punto.x-trx);
+			punto.z=(float) ((2003.65771484375*(punto.z-trz)/1670.9846382141113 )-2003.65771484375);
+			
+		}*/
+		//Readfile t= new Readfile("3.txt");
+		//ArrayList<Punto> Pointlist3 = t.getPointlist();
+		//Readfile v= new Readfile("4.txt");
+		//ArrayList<Punto> Pointlist4 = v.getPointlist();
+		//Readfile w= new Readfile("5.txt");
+		//ArrayList<Punto> Pointlist5 = w.getPointlist();
+		//Readfile a= new Readfile("6.txt");
+		//ArrayList<Punto> Pointlist6 = a.getPointlist();
 		// *********TERRAIN STUFF**********
-		RawModel carromodel=OBJLoader.loadObjModel("carrito", loader);
+		RawModel carromodel=OBJLoader.loadObjModel("carrito3", loader);
+		RawModel excavadoramodel=OBJLoader.loadObjModel("excavadora", loader);
 		
 		TerrainTexture backgroundTexture = new TerrainTexture(loader.loadTexture("text"));
 		TerrainTexture rTexture = new TerrainTexture(loader.loadTexture("mud"));
 		TerrainTexture gTexture = new TerrainTexture(loader.loadTexture("grassFlowers"));
 		TerrainTexture bTexture = new TerrainTexture(loader.loadTexture("path"));
-		TexturedModel textcarro=new TexturedModel(carromodel,new ModelTexture(loader.loadTexture("bricks")));
+		TexturedModel textcarro=new TexturedModel(carromodel,new ModelTexture(loader.loadTexture("texturapintada4")));
+		TexturedModel textexcavadora=new TexturedModel(excavadoramodel,new ModelTexture(loader.loadTexture("ex4")));
 
 		TerrainTexturePack texturePack = new TerrainTexturePack(backgroundTexture, rTexture,gTexture, bTexture);
 		TerrainTexture blendMap = new TerrainTexture(loader.loadTexture("blendMap"));
 
 		// *****************************************
 
-		TexturedModel rocks = new TexturedModel(OBJFileLoader.loadOBJ("excavator", loader),new ModelTexture(loader.loadTexture("rocks")));
+		//TexturedModel rocks = new TexturedModel(OBJFileLoader.loadOBJ("excavadora", loader),new ModelTexture(loader.loadTexture("ex2")));
 
 		ModelTexture fernTextureAtlas = new ModelTexture(loader.loadTexture("fern"));fernTextureAtlas.setNumberOfRows(2);
 
@@ -179,7 +183,7 @@ public class MainGameLoop {
 				}
 			}
 		}
-		entities.add(new Entity(rocks, new Vector3f(20, terrain.getHeightOfTerrain(0, -1), -1), 0, 0, 0, 75));
+		//entities.add(new Entity(rocks, new Vector3f(100, terrain.getHeightOfTerrain(100, -100), -100), 0, 0, 0, 75));
 
 		//*******************OTHER SETUP***************
 
@@ -192,19 +196,44 @@ public class MainGameLoop {
 		RawModel bunnyModel = OBJLoader.loadObjModel("person", loader);
 		TexturedModel stanfordBunny = new TexturedModel(bunnyModel, new ModelTexture(
 				loader.loadTexture("playerTexture")));
-		double altura =terrain.getHeightOfTerrain(Pointlist2.get(0).x, Pointlist2.get(0).z);
-		System.out.println(Pointlist.get(0).x+ " x/z " +Pointlist.get(0).z);
-		System.out.println(Pointlist2.get(0).x+ " x/z " +Pointlist2.get(0).z + " height: " + altura );
+		//double altura =terrain.getHeightOfTerrain(Pointlist2.get(0).x, Pointlist2.get(0).z);
+		//System.out.println(Pointlist.get(0).x+ " x/z " +Pointlist.get(0).z);
+		//System.out.println(Pointlist2.get(0).x+ " x/z " +Pointlist2.get(0).z + " height: " + altura );
 
-		//Player player=new Player(stanfordBunny,new Vector3f(Pointlist3.get(0).x,0, Pointlist3.get(0).z),0,90,0,1);
-		Player player=new Player(stanfordBunny,new Vector3f(0,0, -1),0,90,0,1);
-		//entities.add(player);
-		Players player1=new Players(textcarro,new Vector3f(Pointlist.get(0).x,0,Pointlist.get(0).z),0,0,0,1);
+		Player player=new Player(stanfordBunny,new Vector3f((float)1145.919,0, (float) -1210.9983),0,90,0,1);
+		//Player player=new Player(stanfordBunny,new Vector3f((float)Pointlist.get(0).x,0, (float)Pointlist.get(0).z),0,90,0,1);
+		entities.add(player);
+		Players player1=new Players(textcarro,new Vector3f(Pointlist.get(0).x,player.getPosition().y,Pointlist.get(0).z),0,90,0,1);
 		entities.add(player1);
-		Players player2=new Players(textcarro,new Vector3f(Pointlist2.get(0).x,0,Pointlist2.get(0).z),0,0,0,1);
+		Players player2=new Players(textcarro,new Vector3f(Pointlist2.get(0).x,player.getPosition().y,Pointlist2.get(0).z),0,90,0,1);
 		entities.add(player2);
-		Players player3=new Players(textcarro,new Vector3f(Pointlist3.get(0).x,0,Pointlist3.get(0).z),0,0,0,1);
+		Players player3=new Players(textcarro,new Vector3f(Pointlist3.get(0).x,player.getPosition().y,Pointlist3.get(0).z),0,90,0,1);
 		entities.add(player3);
+		Players player4=new Players(textcarro,new Vector3f(Pointlist4.get(0).x,player.getPosition().y,Pointlist4.get(0).z),0,90,0,1);
+		entities.add(player4);
+		Players player5=new Players(textcarro,new Vector3f(Pointlist5.get(0).x,player.getPosition().y,Pointlist5.get(0).z),0,90,0,1);
+		entities.add(player5);
+		entities.add(new Entity(textexcavadora, new Vector3f((float)1021.71173, terrain.getHeightOfTerrain((float)1021.71173,(float) -1148.8145), (float)-1148.8145), 0, 180, 0, 40));
+		entities.add(new Entity(textexcavadora, new Vector3f((float)1125.5217, terrain.getHeightOfTerrain((float)1125.5217,(float) -809.18097), (float)-809.18097), 0, 180, 0, 40));
+		entities.add(new Entity(textexcavadora, new Vector3f((float)626.5633, terrain.getHeightOfTerrain((float)626.5633,(float) -890.56635), (float)-890.56635), 0, 180, 0, 40));
+		entities.add(new Entity(textexcavadora, new Vector3f((float)954.6614, terrain.getHeightOfTerrain((float)954.6614,(float) -1008.01874), (float)-1008.01874), 0, 180, 0, 40));
+		//Players player2=new Players(textcarro,new Vector3f((float)864.80383,0,(float)-1093.3696),0,0,0,1);
+		//entities.add(player2);
+		//Players player3=new Players(textcarro,new Vector3f(Pointlist2.get(0).x,0,Pointlist2.get(0).z),0,0,0,1);
+		//entities.add(player3);
+		
+		//Players player2=new Players(textcarro,new Vector3f((float)Pointlist2.get(0).x,0,(float)Pointlist2.get(0).z),0,0,0,10);
+		//entities.add(player2);
+		//Players player3=new Players(textcarro,new Vector3f((float)Pointlist3.get(0).x,0,(float)Pointlist3.get(0).z),0,0,0,10);
+		//entities.add(player3);
+		//Players player4=new Players(textcarro,new Vector3f((float)Pointlist4.get(0).x,0,(float)Pointlist4.get(0).z),0,0,0,1);
+		//entities.add(player4);
+		//Players player5=new Players(textcarro,new Vector3f((float)Pointlist5.get(0).x,0,(float)Pointlist5.get(0).z),0,0,0,1);
+		//entities.add(player5);
+		//Players player6=new Players(textcarro,new Vector3f((float)Pointlist6.get(0).x,0,(float)Pointlist6.get(0).z),0,0,0,1);
+		//entities.add(player6);
+		//Players player3=new Players(textcarro,new Vector3f(Pointlist3.get(0).x,0,Pointlist3.get(0).z),0,0,0,1);
+		//entities.add(player3);
 		Camera camera = new Camera(player);
 		List<GuiTexture> guiTextures = new ArrayList<GuiTexture>();
 		GuiRenderer guiRenderer = new GuiRenderer(loader);
@@ -216,7 +245,7 @@ public class MainGameLoop {
 		WaterShader waterShader = new WaterShader();
 		WaterRenderer waterRenderer = new WaterRenderer(loader, waterShader, renderer.getProjectionMatrix(), buffers);
 		List<WaterTile> waters = new ArrayList<WaterTile>();
-		WaterTile water = new WaterTile(75, -75, 0);
+		WaterTile water = new WaterTile((float)859.3326, (float)-1069.1678,5+terrain.getHeightOfTerrain((float)859.3326,(float)-1069.1678));
 		waters.add(water);
 		
 		//****************Game Loop Below*********************
@@ -226,6 +255,15 @@ public class MainGameLoop {
 			player1.moves(terrain, Pointlist);
 			player2.moves(terrain, Pointlist2);
 			player3.moves(terrain, Pointlist3);
+			player4.moves(terrain, Pointlist4);
+			player5.moves(terrain, Pointlist5);
+			//player3.moves(terrain, Pointlist2);
+			//player2.moves(terrain, Pointlist);
+			//player2.moves(terrain, Pointlist2);
+			//player3.moves(terrain, Pointlist3);
+			//player4.moves(terrain, Pointlist4);
+			//player5.moves(terrain, Pointlist5);
+			//player6.moves(terrain, Pointlist6);
 			camera.move();
 			picker.update();
 			entity.increaseRotation(0, 1, 0);

@@ -2,17 +2,21 @@ package entities;
 
 import models.TexturedModel;
 
+import java.util.ArrayList;
+
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.util.vector.Vector3f;
 
 import renderEngine.DisplayManager;
 import terrains.Terrain;
+import toolbox.FileCreator;
+import toolbox.Readfile;
 
 public class Player extends Entity {
 
-	private static final float RUN_SPEED = 200;
+	private static final float RUN_SPEED = 20;
 	private static final float TURN_SPEED = 160;
-	private static final float GRAVITY = -50;
+	private static final float GRAVITY = 0;
 	private static final float JUMP_POWER = 50;
 
 	private float currentSpeed = 0;
@@ -20,6 +24,7 @@ public class Player extends Entity {
 	private float upwardsSpeed = 0;
 
 	private boolean isInAir = false;
+	private ArrayList<Punto> Pointlist= new ArrayList<Punto>();
 
 	public Player(TexturedModel model, Vector3f position, float rotX, float rotY, float rotZ,
 			float scale) {
@@ -55,10 +60,13 @@ public class Player extends Entity {
 			this.currentSpeed = RUN_SPEED;
 		} else if (Keyboard.isKeyDown(Keyboard.KEY_S)) {
 			this.currentSpeed = -RUN_SPEED;
-		} else {
+		}
+		else {
 			this.currentSpeed = 0;
 		}
-
+		if((Keyboard.isKeyDown(Keyboard.KEY_W))&&(Keyboard.isKeyDown(Keyboard.KEY_LSHIFT))){
+			this.currentSpeed = RUN_SPEED*10;
+		}
 		if (Keyboard.isKeyDown(Keyboard.KEY_D)) {
 			this.currentTurnSpeed = -TURN_SPEED;
 		} else if (Keyboard.isKeyDown(Keyboard.KEY_A)) {
@@ -69,6 +77,26 @@ public class Player extends Entity {
 
 		if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)) {
 			jump();
+		}else if(Keyboard.isKeyDown(Keyboard.KEY_Q)) {
+			this.upwardsSpeed=-JUMP_POWER;
+		}else if(Keyboard.isKeyDown(Keyboard.KEY_E)) {
+			this.upwardsSpeed=0;
+		}
+		if (Keyboard.isKeyDown(Keyboard.KEY_O)) {
+			if (Pointlist.size()==0) {
+				Pointlist.add(new Punto(this.getPosition().x,this.getPosition().z));
+			}
+			
+			if(!(Pointlist.size()==0)) {
+				//(new Punto(this.getPosition().x,this.getPosition().z).equals(Pointlist.get(Pointlist.size()-1
+				if(!(this.getPosition().x==Pointlist.get(Pointlist.size()-1).x)){
+					if(!(this.getPosition().z==Pointlist.get(Pointlist.size()-1).z)){
+				Pointlist.add(new Punto(this.getPosition().x,this.getPosition().z));
+			}
+				}
+			}
+		}else if(Keyboard.isKeyDown(Keyboard.KEY_P)){
+			FileCreator s= new FileCreator(Pointlist);
 		}
 	}
 
