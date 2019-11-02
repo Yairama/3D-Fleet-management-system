@@ -23,7 +23,7 @@ import terrains.Terrain;
 
 public class Players extends Entity{
 	
-	private static final float RUN_SPEED=20;
+	private static final float RUN_SPEED=10;
 	private static final float TURN_SPEED=50;
 	private static final float GRAVITY=-50;
 	private static final float JUMP_POWER=30;
@@ -99,8 +99,7 @@ public class Players extends Entity{
 			 }
 			 if (count!=Pointlist.size()-2){
 			 actualdistance=Math.sqrt(Math.pow(super.getPosition().x-punto2.x, 2)+Math.pow(super.getPosition().z-punto2.z, 2));
-			 //System.out.println(actualdistance + " count : " + count + " roty: " + this.rotY  + " dx: " + (punto2.x-super.getPosition().x) +  " dz: " + (punto2.z-super.getPosition().z) + " xd : "+(90+(90-Math.toDegrees(Math.atan((punto2.z-super.getPosition().z)/(punto2.x-super.getPosition().x))))));
-			 if(actualdistance<(RUN_SPEED/100)) {
+			 if(actualdistance<(RUN_SPEED/65)) {
 				 count++;
 				 
 			 }

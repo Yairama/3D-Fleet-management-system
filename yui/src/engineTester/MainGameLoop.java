@@ -95,6 +95,7 @@ public class MainGameLoop {
 		RawModel excavadoramodel=OBJLoader.loadObjModel("excavadora", loader);
 		RawModel ripmodel=OBJLoader.loadObjModel("tum", loader);
 		RawModel rosemodel=OBJLoader.loadObjModel("rose", loader);
+		//RawModel perfmodel=OBJLoader.loadObjModel("perf", loader);
 		
 		TerrainTexture backgroundTexture = new TerrainTexture(loader.loadTexture("text"));
 		TerrainTexture rTexture = new TerrainTexture(loader.loadTexture("mud"));
@@ -104,6 +105,7 @@ public class MainGameLoop {
 		TexturedModel textexcavadora=new TexturedModel(excavadoramodel,new ModelTexture(loader.loadTexture("ex4")));
 		TexturedModel textrip=new TexturedModel(ripmodel,new ModelTexture(loader.loadTexture("texttum")));
 		TexturedModel textrose=new TexturedModel(rosemodel,new ModelTexture(loader.loadTexture("rosetext")));
+		//TexturedModel textperf=new TexturedModel(perfmodel,new ModelTexture(loader.loadTexture("normal")));
 
 		TerrainTexturePack texturePack = new TerrainTexturePack(backgroundTexture, rTexture,gTexture, bTexture);
 		TerrainTexture blendMap = new TerrainTexture(loader.loadTexture("blendMap"));
@@ -219,10 +221,10 @@ public class MainGameLoop {
 		entities.add(player4);
 		Players player5=new Players(textcarro,new Vector3f(Pointlist5.get(0).x,player.getPosition().y,Pointlist5.get(0).z),0,90,0,1);
 		entities.add(player5);
-		entities.add(new Entity(textexcavadora, new Vector3f((float)1021.71173, terrain.getHeightOfTerrain((float)1021.71173,(float) -1148.8145), (float)-1148.8145), 0, 180, 0, 40));
-		entities.add(new Entity(textexcavadora, new Vector3f((float)1125.5217, terrain.getHeightOfTerrain((float)1125.5217,(float) -809.18097), (float)-809.18097), 0, 180, 0, 40));
-		entities.add(new Entity(textexcavadora, new Vector3f((float)626.5633, terrain.getHeightOfTerrain((float)626.5633,(float) -890.56635), (float)-890.56635), 0, 180, 0, 40));
-		entities.add(new Entity(textexcavadora, new Vector3f((float)954.6614, terrain.getHeightOfTerrain((float)954.6614,(float) -1008.01874), (float)-1008.01874), 0, 180, 0, 40));
+		//entities.add(new Entity(textperf, new Vector3f((float)1021.71173, terrain.getHeightOfTerrain((float)1021.71173,(float) -1148.8145), (float)-1148.8145), 0, 180, 0, 40));
+		//entities.add(new Entity(textperf, new Vector3f((float)1125.5217, terrain.getHeightOfTerrain((float)1125.5217,(float) -809.18097), (float)-809.18097), 0, 180, 0, 40));
+		//entities.add(new Entity(textperf, new Vector3f((float)626.5633, terrain.getHeightOfTerrain((float)626.5633,(float) -890.56635), (float)-890.56635), 0, 180, 0, 40));
+		//entities.add(new Entity(textperf, new Vector3f((float)954.6614, terrain.getHeightOfTerrain((float)954.6614,(float) -1008.01874), (float)-1008.01874), 0, 180, 0, 40));
 		//Players player2=new Players(textcarro,new Vector3f((float)864.80383,0,(float)-1093.3696),0,0,0,1);
 		//entities.add(player2);
 		//Players player3=new Players(textcarro,new Vector3f(Pointlist2.get(0).x,0,Pointlist2.get(0).z),0,0,0,1);
