@@ -96,7 +96,7 @@ public class MainGameLoop {
 		
 		TerrainTexture backgroundTexture = new TerrainTexture(loader.loadTexture("text"));
 		TerrainTexture rTexture = new TerrainTexture(loader.loadTexture("mud"));
-		TerrainTexture gTexture = new TerrainTexture(loader.loadTexture("grassFlowers"));
+		TerrainTexture gTexture = new TerrainTexture(loader.loadTexture("textgris"));
 		TerrainTexture bTexture = new TerrainTexture(loader.loadTexture("path"));
 		TexturedModel textcarro=new TexturedModel(carromodel,new ModelTexture(loader.loadTexture("texturapintada4")));
 		TexturedModel textexcavadora=new TexturedModel(excavadoramodel,new ModelTexture(loader.loadTexture("ex4")));
