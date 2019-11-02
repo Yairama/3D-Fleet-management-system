@@ -76,7 +76,23 @@ public class Players extends Entity{
 
 			Punto punto1=Pointlist.get(count);
 			Punto punto2=Pointlist.get(count+1);
-			 if (punto2.z>=super.getPosition().z){//(punto2.z>punto1.z)
+
+			if (!(count==Pointlist.size()-2)){
+				 actualdistance=Math.sqrt(Math.pow(super.getPosition().x-punto2.x, 2)+Math.pow(super.getPosition().z-punto2.z, 2));
+				 
+				 }
+			if(actualdistance<(RUN_SPEED/20)) {
+				 count++;
+				 
+			 }
+			if (count==Pointlist.size()-2){
+				 if (Math.sqrt(Math.pow(super.getPosition().x-punto2.x, 2)+Math.pow(super.getPosition().z-punto2.z, 2))<RUN_SPEED/100) {
+					 Collections.reverse(Pointlist);
+					 count=0;
+				 }	 
+			 }
+			
+			 if (punto2.z>=super.getPosition().z){
 				 this.rotY=(float)Math.toDegrees(Math.atan((punto2.x-super.getPosition().x)/(punto2.z-super.getPosition().z)));//(punto2.x-punto1.x)/(punto2.z-punto1.z)
 			 } if(punto2.z<super.getPosition().z){
 				 if (punto2.x<super.getPosition().x) {
@@ -90,20 +106,9 @@ public class Players extends Entity{
 					this.currentSpeed=RUN_SPEED;}
 			 if(Keyboard.isKeyDown(Keyboard.KEY_L)) {
 					this.currentSpeed=0;}
-			 if (count==Pointlist.size()-2){
-				 if (Math.sqrt(Math.pow(super.getPosition().x-punto2.x, 2)+Math.pow(super.getPosition().z-punto2.z, 2))<RUN_SPEED/100) {
-					 //this.currentSpeed=0;
-					 Collections.reverse(Pointlist);
-					 count=0;
-				 }	 
-			 }
-			 if (count!=Pointlist.size()-2){
-			 actualdistance=Math.sqrt(Math.pow(super.getPosition().x-punto2.x, 2)+Math.pow(super.getPosition().z-punto2.z, 2));
-			 if(actualdistance<(RUN_SPEED/65)) {
-				 count++;
-				 
-			 }
-			 }
+			 
+			 
+			 
 			 
 			 /*distance1=Math.sqrt(Math.pow(punto1.x-punto2.x, 2)+Math.pow(punto1.z-punto2.z, 2));
 			 
