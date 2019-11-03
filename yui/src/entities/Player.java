@@ -77,9 +77,9 @@ public class Player extends Entity {
 
 		if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)) {
 			jump();
-		}else if(Keyboard.isKeyDown(Keyboard.KEY_Q)) {
+		}else if(Keyboard.isKeyDown(Keyboard.KEY_LCONTROL)) {
 			this.upwardsSpeed=-JUMP_POWER;
-		}else if(Keyboard.isKeyDown(Keyboard.KEY_E)) {
+		}else  {
 			this.upwardsSpeed=0;
 		}
 		if (Keyboard.isKeyDown(Keyboard.KEY_O)) {

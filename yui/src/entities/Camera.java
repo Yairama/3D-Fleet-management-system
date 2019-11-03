@@ -28,8 +28,8 @@ public class Camera {
 	
 	public void move(){
 		calculateZoom();
-		//calculatePitch();
-		//calculateAngleAroundPlayer();
+		calculatePitch();
+		calculateAngleAroundPlayer();
 		float horizontalDistance = calculateHorizontalDistance();
 		float verticalDistance = calculateVerticalDistance();
 		calculateCameraPosition(horizontalDistance, verticalDistance);

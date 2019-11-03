@@ -94,17 +94,17 @@ public class SkyboxRenderer {
 	}
 	
 	private void bindTextures(){
-		time += DisplayManager.getFrameTimeSeconds() * 1000;
+		time += DisplayManager.getFrameTimeSeconds() * 100;
 		time %= 24000;
 		int texture1;
 		int texture2;
-		float blendFactor;		
+		float blendFactor;
 		if(time >= 0 && time < 5000){
-			texture1 = texture;
-			texture2 = texture;
+			texture1 = nightTexture;
+			texture2 = nightTexture;
 			blendFactor = (time - 0)/(5000 - 0);
 		}else if(time >= 5000 && time < 8000){
-			texture1 = texture;
+			texture1 = nightTexture;
 			texture2 = texture;
 			blendFactor = (time - 5000)/(8000 - 5000);
 		}else if(time >= 8000 && time < 21000){
@@ -113,7 +113,7 @@ public class SkyboxRenderer {
 			blendFactor = (time - 8000)/(21000 - 8000);
 		}else{
 			texture1 = texture;
-			texture2 = texture;
+			texture2 = nightTexture;
 			blendFactor = (time - 21000)/(24000 - 21000);
 		}
 
