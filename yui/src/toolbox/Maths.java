@@ -70,12 +70,16 @@ public static double trz(double number) {
 	}
 public static ArrayList<Punto> getRandomAround(float x, float z,float limit, Terrain terrain) {
 	ArrayList<Punto> lista=new ArrayList<Punto>();
-	for (int i = 0; i<15;i++) {
-	float cx=(float)(x+((Math.random()*70)-0.5));
-	float cz=(float)(z+((Math.random()*70)-0.5));
+	for (int i = 0; i<40;i++) {
+	float cx=(float)(x+(((Math.random()-0.5)*70)));
+	float cz=(float)(z+(((Math.random()-0.5)*70)));
 	float y= terrain.getHeightOfTerrain(cx,cz);
 	if(y>limit) {
 	lista.add(new Punto(cx,cz));
+	}
+	if (lista.size()<30) {
+		i=10;
+		
 	}
 	}
 	return lista;

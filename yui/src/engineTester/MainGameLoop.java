@@ -92,10 +92,10 @@ public class MainGameLoop {
 		RawModel rosemodel=OBJLoader.loadObjModel("rose", loader);
 		RawModel perfmodel=OBJLoader.loadObjModel("perf", loader);
 		
-		TerrainTexture backgroundTexture = new TerrainTexture(loader.loadTexture("text"));
-		TerrainTexture rTexture = new TerrainTexture(loader.loadTexture("mud"));
+		TerrainTexture backgroundTexture = new TerrainTexture(loader.loadTexture("grassy3"));
+		TerrainTexture rTexture = new TerrainTexture(loader.loadTexture("text"));
 		TerrainTexture gTexture = new TerrainTexture(loader.loadTexture("textgris"));
-		TerrainTexture bTexture = new TerrainTexture(loader.loadTexture("path"));
+		TerrainTexture bTexture = new TerrainTexture(loader.loadTexture("gris"));
 		TexturedModel textcarro=new TexturedModel(carromodel,new ModelTexture(loader.loadTexture("texturapintada4")));
 		TexturedModel textexcavadora=new TexturedModel(excavadoramodel,new ModelTexture(loader.loadTexture("ex4")));
 		TexturedModel textrip=new TexturedModel(ripmodel,new ModelTexture(loader.loadTexture("texttum")));
@@ -103,7 +103,7 @@ public class MainGameLoop {
 		TexturedModel textperf=new TexturedModel(perfmodel,new ModelTexture(loader.loadTexture("textperf")));
 
 		TerrainTexturePack texturePack = new TerrainTexturePack(backgroundTexture, rTexture,gTexture, bTexture);
-		TerrainTexture blendMap = new TerrainTexture(loader.loadTexture("blendMap"));
+		TerrainTexture blendMap = new TerrainTexture(loader.loadTexture("tuchola"));
 
 		// *****************************************
 
@@ -161,7 +161,6 @@ public class MainGameLoop {
 		ArrayList <Punto> puntosran1=Maths.getRandomAround(coorax1, cooraz1, limit1, terrain);
 		for (Punto punto: puntosran1) {
 			entities.add(new Entity(bobble,new Vector3f(punto.x,terrain.getHeightOfTerrain(punto.x, punto.z),punto.z),0,0,0,1));
-			System.out.println("XD");
 			
 		}
 		 float coorax2=1358.1823f;
