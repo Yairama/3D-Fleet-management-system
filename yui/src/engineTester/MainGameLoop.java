@@ -155,10 +155,31 @@ public class MainGameLoop {
 		normalMapEntities.add(entity);
 		normalMapEntities.add(entity2);
 		normalMapEntities.add(entity3);
-		float coorax=920.0138f;
-		float cooraz=-507.54327f;
-		//Maths.getRandomAround(920.0138f, -507.5432, limit, terrain)
-		//Maths.getRandomAround(x, z)
+		float coorax1=920.0138f;
+		float cooraz1=-507.54327f;
+		float limit1 =291.01956f;
+		ArrayList <Punto> puntosran1=Maths.getRandomAround(coorax1, cooraz1, limit1, terrain);
+		for (Punto punto: puntosran1) {
+			entities.add(new Entity(bobble,new Vector3f(punto.x,terrain.getHeightOfTerrain(punto.x, punto.z),punto.z),0,0,0,1));
+			System.out.println("XD");
+			
+		}
+		 float coorax2=1358.1823f;
+		 float cooraz2=-962.9335f;
+		 float limit2 =249.21567f;
+		 puntosran1=Maths.getRandomAround(coorax2, cooraz2, limit2, terrain);
+		for (Punto punto: puntosran1) {
+			entities.add(new Entity(bobble,new Vector3f(punto.x,terrain.getHeightOfTerrain(punto.x, punto.z),punto.z),0,0,0,1));
+			
+		}
+		 float coorax3=303.7779f;
+		 float cooraz3=-788.29974f;
+		 float limit3 =326.3921f;
+		 puntosran1=Maths.getRandomAround(coorax3, cooraz3, limit3, terrain);
+		for (Punto punto: puntosran1) {
+			entities.add(new Entity(bobble,new Vector3f(punto.x,terrain.getHeightOfTerrain(punto.x, punto.z),punto.z),0,0,0,1));
+			
+		}
 
 		
 		
