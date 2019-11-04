@@ -58,25 +58,25 @@ public class MainGameLoop {
 		//rangoy: 1670.9846382141113
 		//miny=9251158.233398438
 		//minx: 762546.5153617859
-		Readfile r1= new Readfile("1.txt");
+		Readfile r1= new Readfile("1-2.txt");
 		ArrayList<Punto> Pointlist = r1.getPointlist();
-		Readfile r2= new Readfile("2.txt");
+		Readfile r2= new Readfile("2-3.txt");
 		ArrayList<Punto> Pointlist2 = r2.getPointlist();
-		Readfile r3= new Readfile("3.txt");
+		Readfile r3= new Readfile("3-6.txt");
 		ArrayList<Punto> Pointlist3 = r3.getPointlist();
-		Readfile r4= new Readfile("4.txt");
+		Readfile r4= new Readfile("5-6.txt");
 		ArrayList<Punto> Pointlist4 = r4.getPointlist();
-		Readfile r5= new Readfile("5.txt");
+		Readfile r5= new Readfile("6-9.txt");
 		ArrayList<Punto> Pointlist5 = r5.getPointlist();
-		Readfile r6= new Readfile("5.txt");
+		Readfile r6= new Readfile("7-6.txt");
 		ArrayList<Punto> Pointlist6 = r6.getPointlist();
-		/*Readfile r7= new Readfile("6.txt");
+		Readfile r7= new Readfile("8-9.txt");
 		ArrayList<Punto> Pointlist7 = r7.getPointlist();
-		Readfile r8= new Readfile("7.txt");
+		Readfile r8= new Readfile("9-4.txt");
 		ArrayList<Punto> Pointlist8 = r8.getPointlist();
-		Readfile r9= new Readfile("8.txt");
+		Readfile r9= new Readfile("10-11.txt");
 		ArrayList<Punto> Pointlist9 = r9.getPointlist();
-		Readfile r10= new Readfile("9.txt");
+		/*Readfile r10= new Readfile("9.txt");
 		ArrayList<Punto> Pointlist10 = r10.getPointlist();
 		Readfile r11= new Readfile("10.txt");
 		ArrayList<Punto> Pointlist11 = r11.getPointlist();
@@ -205,6 +205,14 @@ public class MainGameLoop {
 		entities.add(player4);
 		Players player5=new Players(textcarro,new Vector3f(Pointlist5.get(0).x,player.getPosition().y,Pointlist5.get(0).z),0,90,0,1);
 		entities.add(player5);
+		Players player6=new Players(textcarro,new Vector3f(Pointlist6.get(0).x,player.getPosition().y,Pointlist6.get(0).z),0,90,0,1);
+		entities.add(player6);
+		Players player7=new Players(textcarro,new Vector3f(Pointlist7.get(0).x,player.getPosition().y,Pointlist7.get(0).z),0,90,0,1);
+		entities.add(player7);
+		Players player8=new Players(textcarro,new Vector3f(Pointlist8.get(0).x,player.getPosition().y,Pointlist8.get(0).z),0,90,0,1);
+		entities.add(player8);
+		Players player9=new Players(textcarro,new Vector3f(Pointlist9.get(0).x,player.getPosition().y,Pointlist9.get(0).z),0,90,0,1);
+		entities.add(player9);
 		entities.add(new Entity(textperf, new Vector3f((float)973.45795, terrain.getHeightOfTerrain((float)973.45795,(float) -1044.9641), (float)-1044.9641), 0, 180, 0, 1));
 		entities.add(new Entity(textperf, new Vector3f((float)899.5118, terrain.getHeightOfTerrain((float)899.5118,(float) -988.5052), (float)-988.5052), 0, 90, 0, 1));
 
@@ -231,6 +239,10 @@ public class MainGameLoop {
 			player3.moves(terrain, Pointlist3);
 			player4.moves(terrain, Pointlist4);
 			player5.moves(terrain, Pointlist5);
+			player6.moves(terrain, Pointlist6);
+			player7.moves(terrain, Pointlist7);
+			player8.moves(terrain, Pointlist8);
+			player9.moves(terrain, Pointlist9);
 			camera.move();
 			picker.update();
 			entity.increaseRotation(0, 1, 0);
