@@ -14,7 +14,7 @@ import entities.Camera;
 
 public class SkyboxRenderer {
 	
-	private static final float SIZE = 50000f;
+	private static final float SIZE = 5000f;
 	
 	private static final float[] VERTICES = {        
 	    -SIZE,  SIZE, -SIZE,

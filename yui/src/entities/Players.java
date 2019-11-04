@@ -35,6 +35,7 @@ public class Players extends Entity{
 	private float upwardsSpeed=0;
 	private int count=0;
 	private double actualdistance;
+	private int xd=0;
 	
 	private boolean isInAir=false;
 	short started=0;
@@ -73,21 +74,20 @@ public class Players extends Entity{
 
 	private void checkInputs1(ArrayList<Punto> Pointlist) {
 
-
-			Punto punto1=Pointlist.get(count);
 			Punto punto2=Pointlist.get(count+1);
-			
+			actualdistance=Math.sqrt(Math.pow(super.getPosition().x-punto2.x, 2)+Math.pow(super.getPosition().z-punto2.z, 2));
+							
 			
 			if (count==Pointlist.size()-2){
-				 if (Math.sqrt(Math.pow(super.getPosition().x-punto2.x, 2)+Math.pow(super.getPosition().z-punto2.z, 2))<RUN_SPEED/20) {
+				 if (actualdistance<RUN_SPEED/2) {
 					 Collections.reverse(Pointlist);
 					 count=0;
 				 }	 
 			 }
 			if (!(count==Pointlist.size()-2)){
-				 actualdistance=Math.sqrt(Math.pow(super.getPosition().x-punto2.x, 2)+Math.pow(super.getPosition().z-punto2.z, 2));
-				 if(actualdistance<(RUN_SPEED/20)) {
+				 if(actualdistance<(RUN_SPEED/2)) {
 					 count++;
+					 
 					 
 				 }
 				 }
@@ -107,25 +107,7 @@ public class Players extends Entity{
 			 if(Keyboard.isKeyDown(Keyboard.KEY_L)) {
 					this.currentSpeed=0;}
 			 
-			 
-			 
-			 
-			 /*distance1=Math.sqrt(Math.pow(punto1.x-punto2.x, 2)+Math.pow(punto1.z-punto2.z, 2));
-			 
-				time=distance1/RUN_SPEED;
-				this.currentSpeed=RUN_SPEED;
-				
-				long timeinmiliseconds=(int) (time*1000);
-				
-				int timeinnanoseconds=(int) ( time*1000000000-timeinmiliseconds*1000000);
-				//System.out.println(timeinnanoseconds);
-				System.out.println("time: " + time*1000000000 + " miliseconds:"+timeinmiliseconds+ " result: "+timeinnanoseconds);
-				
-				try {
-					Thread.sleep(timeinmiliseconds, timeinnanoseconds);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}*/
+
 
 		
 	}

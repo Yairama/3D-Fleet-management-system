@@ -1,5 +1,8 @@
 package renderEngine;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 import org.lwjgl.LWJGLException;
 import org.lwjgl.Sys;
 import org.lwjgl.opengl.ContextAttribs;
@@ -9,30 +12,26 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.PixelFormat;
 
-public class DisplayManager {
-	
-	private static final int WIDTH = 1680;
-	private static final int HEIGHT = 1080;
+public class DisplayManager {	
 	private static final int FPS_CAP = 60;
+	
 	
 	private static long lastFrameTime;
 	private static float delta;
 	
 	public static void createDisplay(){		
-		ContextAttribs attribs = new ContextAttribs(3,2)
-		.withForwardCompatible(true)
-		.withProfileCore(true);
+		ContextAttribs attribs = new ContextAttribs(3,2).withForwardCompatible(true).withProfileCore(true);
 		
 		try {
-			Display.setDisplayMode(new DisplayMode(WIDTH,HEIGHT));
 			Display.create(new PixelFormat(), attribs);
 			Display.setTitle("Yui_Software");
+			Display.setFullscreen(true);
 			GL11.glEnable(GL13.GL_MULTISAMPLE);
 		} catch (LWJGLException e) {
 			e.printStackTrace();
 		}
 		
-		GL11.glViewport(0,0, WIDTH, HEIGHT);
+		//GL11.glViewport(0,0, WIDTH, HEIGHT);
 		lastFrameTime = getCurrentTime();
 	}
 	
