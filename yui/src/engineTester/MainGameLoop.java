@@ -52,12 +52,6 @@ public class MainGameLoop {
 
 		DisplayManager.createDisplay();
 		Loader loader = new Loader();
-		//double trz = Maths.trx(762546.5153617859);
-		//double trx = Maths.trz(9251158.233398438);
-		//rangox: 2003.65771484375
-		//rangoy: 1670.9846382141113
-		//miny=9251158.233398438
-		//minx: 762546.5153617859
 		Readfile r1= new Readfile("1-2.txt");
 		ArrayList<Punto> Pointlist = r1.getPointlist();
 		Readfile r2= new Readfile("2-3.txt");
@@ -161,32 +155,13 @@ public class MainGameLoop {
 		normalMapEntities.add(entity);
 		normalMapEntities.add(entity2);
 		normalMapEntities.add(entity3);
+		float coorax=920.0138f;
+		float cooraz=-507.54327f;
+		//Maths.getRandomAround(920.0138f, -507.5432, limit, terrain)
+		//Maths.getRandomAround(x, z)
+
 		
-		Random random = new Random(5666778);
-		for (int i = 0; i < 60; i++) {
-			if (i % 3 == 0) {
-				float x = random.nextFloat() * 150;
-				float z = random.nextFloat() * -150;
-				if ((x > 50 && x < 100) || (z < -50 && z > -100)) {
-				} else {
-					float y = terrain.getHeightOfTerrain(x, z);
-
-					entities.add(new Entity(fern, 3, new Vector3f(x, y, z), 0,random.nextFloat() * 360, 0, 0.9f));
-				}
-			}
-			if (i % 2 == 0) {
-
-				float x = random.nextFloat() * 150;
-				float z = random.nextFloat() * -150;
-				if ((x > 50 && x < 100) || (z < -50 && z > -100)) {
-
-				} else {
-					float y = terrain.getHeightOfTerrain(x, z);
-					entities.add(new Entity(bobble, 1, new Vector3f(x, y, z), 0,
-							random.nextFloat() * 360, 0, random.nextFloat() * 0.6f + 0.8f));
-				}
-			}
-		}
+		
 
 		//*******************OTHER SETUP***************
 
@@ -207,9 +182,9 @@ public class MainGameLoop {
 		entities.add(player1);
 		Players player2=new Players(textcarro,new Vector3f(Pointlist2.get(0).x,0,Pointlist2.get(0).z),0,90,0,1);
 		entities.add(player2);
-		Players player3=new Players(textcarro,new Vector3f(Pointlist3.get(0).x,0,Pointlist3.get(0).z),0,90,0,2);
+		Players player3=new Players(textcarro,new Vector3f(Pointlist3.get(0).x,0,Pointlist3.get(0).z),0,90,0,1);
 		entities.add(player3);
-		Players player4=new Players(textcarro,new Vector3f(Pointlist4.get(0).x,0,Pointlist4.get(0).z),0,90,0,2);
+		Players player4=new Players(textcarro,new Vector3f(Pointlist4.get(0).x,0,Pointlist4.get(0).z),0,90,0,1);
 		entities.add(player4);
 		Players player5=new Players(textcarro,new Vector3f(Pointlist5.get(0).x,0,Pointlist5.get(0).z),0,90,0,1);
 		entities.add(player5);

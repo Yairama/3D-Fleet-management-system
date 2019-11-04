@@ -6,12 +6,15 @@
  */
 package toolbox;
 
+import java.util.ArrayList;
+
 import org.lwjgl.util.vector.Matrix4f;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 
 import entities.Camera;
-
+import entities.Punto;
+import terrains.Terrain;;
 public class Maths {
 	
 	public static Matrix4f createTransformationMatrix(Vector2f translation, Vector2f scale) {
@@ -65,5 +68,18 @@ public static double trz(double number) {
 
 		return num;
 	}
+public static ArrayList<Punto> getRandomAround(float x, float z,float limit, Terrain terrain) {
+	ArrayList<Punto> lista=new ArrayList<Punto>();
+	for (int i = 0; i<41;i++) {
+	float cx=(float)(x+Math.random()*20);
+	float cz=(float)(z+Math.random()*20);
+	float y= terrain.getHeightOfTerrain(cx,cz);
+	if(y>limit) {
+	lista.add(new Punto(cx,cz));
+	}
+	}
+	return lista;
+	
+}}
 
-}
+
