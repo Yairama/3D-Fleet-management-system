@@ -93,9 +93,9 @@ public class MainGameLoop {
 		RawModel perfmodel=OBJLoader.loadObjModel("perf", loader);
 		
 		TerrainTexture backgroundTexture = new TerrainTexture(loader.loadTexture("grassy3"));
-		TerrainTexture rTexture = new TerrainTexture(loader.loadTexture("text"));
-		TerrainTexture gTexture = new TerrainTexture(loader.loadTexture("textgris"));
-		TerrainTexture bTexture = new TerrainTexture(loader.loadTexture("gris"));
+		TerrainTexture rTexture = new TerrainTexture(loader.loadTexture("textgris"));
+		TerrainTexture gTexture = new TerrainTexture(loader.loadTexture("text"));
+		TerrainTexture bTexture = new TerrainTexture(loader.loadTexture("marronclaro"));
 		TexturedModel textcarro=new TexturedModel(carromodel,new ModelTexture(loader.loadTexture("texturapintada4")));
 		TexturedModel textexcavadora=new TexturedModel(excavadoramodel,new ModelTexture(loader.loadTexture("ex4")));
 		TexturedModel textrip=new TexturedModel(ripmodel,new ModelTexture(loader.loadTexture("texttum")));
@@ -196,8 +196,8 @@ public class MainGameLoop {
 		entities.add(new Entity(textrip, new Vector3f((float)1767.6525, terrain.getHeightOfTerrain((float)1767.6525,(float) -1368.7086), (float)-1368.7086), 0, 180, 0, 2));
 		entities.add(new Entity(textrose, new Vector3f((float)1777.653, terrain.getHeightOfTerrain((float)1777.653,(float) -1371.3364), (float)-1371.3364), 0, 180, 0, (float)0.05));
 		
-		Player player=new Player(stanfordBunny,new Vector3f((float)814.94147,0, (float)-1141.3142),0,90,0,(float)0.05);
-		entities.add(player);
+		Player player=new Player(stanfordBunny,new Vector3f((float)814.94147,0, (float)-1141.3142),0,90,0,(float)0.5);
+		//entities.add(player);
 		Players player1=new Players(textcarro,new Vector3f(Pointlist.get(0).x,0,Pointlist.get(0).z),0,90,0,1);
 		entities.add(player1);
 		Players player2=new Players(textcarro,new Vector3f(Pointlist2.get(0).x,0,Pointlist2.get(0).z),0,90,0,1);
