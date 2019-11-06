@@ -101,7 +101,8 @@ public abstract class ShaderProgram {
 	private static int loadShader(String file, int type){
 		StringBuilder shaderSource = new StringBuilder();
 		try{
-			BufferedReader reader = new BufferedReader(new FileReader(file));
+			InputStream in=Class.class.getResourceAsStream(file);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 			String line;
 			while((line = reader.readLine())!=null){
 				shaderSource.append(line).append("//\n");

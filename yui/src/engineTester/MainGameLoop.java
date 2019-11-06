@@ -84,6 +84,18 @@ public class MainGameLoop {
 		ArrayList<Punto> Pointlist15 = r15.getPointlist();
 		Readfile r16= new Readfile("7.txt");
 		ArrayList<Punto> Pointlist16 = r16.getPointlist();
+		Readfile r17= new Readfile("nuevo 1.txt");
+		ArrayList<Punto> Pointlist17 = r17.getPointlist();
+		Readfile r18= new Readfile("nuevo 2.txt");
+		ArrayList<Punto> Pointlist18 = r18.getPointlist();
+		Readfile r19= new Readfile("nuevo 3.txt");
+		ArrayList<Punto> Pointlist19 = r19.getPointlist();
+		Readfile r20= new Readfile("ruta 4.txt");
+		ArrayList<Punto> Pointlist20 = r20.getPointlist();
+		Readfile r21= new Readfile("ruta 5.txt");
+		ArrayList<Punto> Pointlist21 = r21.getPointlist();
+		Readfile r22= new Readfile("ruta 6.txt");
+		ArrayList<Punto> Pointlist22 = r22.getPointlist();
 
 		// *********TERRAIN STUFF**********
 		RawModel carromodel=OBJLoader.loadObjModel("carrito3", loader);
@@ -230,6 +242,18 @@ public class MainGameLoop {
 		entities.add(player15);
 		Players player16=new Players(textcarro,new Vector3f(Pointlist16.get(0).x,0,Pointlist16.get(0).z),0,90,0,1);
 		entities.add(player16);
+		Players player17=new Players(textcarro,new Vector3f(Pointlist17.get(0).x,0,Pointlist17.get(0).z),0,90,0,1);
+		entities.add(player17);
+		Players player18=new Players(textcarro,new Vector3f(Pointlist18.get(0).x,0,Pointlist18.get(0).z),0,90,0,1);
+		entities.add(player18);
+		Players player19=new Players(textcarro,new Vector3f(Pointlist19.get(0).x,0,Pointlist19.get(0).z),0,90,0,1);
+		entities.add(player19);
+		Players player20=new Players(textcarro,new Vector3f(Pointlist20.get(0).x,0,Pointlist20.get(0).z),0,90,0,1);
+		entities.add(player20);
+		Players player21=new Players(textcarro,new Vector3f(Pointlist21.get(0).x,0,Pointlist21.get(0).z),0,90,0,1);
+		entities.add(player21);
+		Players player22=new Players(textcarro,new Vector3f(Pointlist22.get(0).x,0,Pointlist22.get(0).z),0,90,0,1);
+		entities.add(player22);
 		entities.add(new Entity(textperf, new Vector3f((float)973.45795, terrain.getHeightOfTerrain((float)973.45795,(float) -1044.9641), (float)-1044.9641), 0, 180, 0, 1));
 		entities.add(new Entity(textperf, new Vector3f((float)899.5118, terrain.getHeightOfTerrain((float)899.5118,(float) -988.5052), (float)-988.5052), 0, 90, 0, 1));
 		entities.add(new Entity(textexcavadora, new Vector3f((float)1002.4283, terrain.getHeightOfTerrain((float)1002.4283,(float) -1104.8986), (float)-1104.8986), 0, 180, 0, 20));
@@ -269,6 +293,12 @@ public class MainGameLoop {
 			player14.moves(terrain, Pointlist14);
 			player15.moves(terrain, Pointlist15);
 			player16.moves(terrain, Pointlist16);
+			player17.moves(terrain, Pointlist17);
+			player18.moves(terrain, Pointlist18);
+			player19.moves(terrain, Pointlist19);
+			player20.moves(terrain, Pointlist20);
+			player21.moves(terrain, Pointlist21);
+			player22.moves(terrain, Pointlist22);
 			camera.move();
 			picker.update();
 			entity.increaseRotation(0, 1, 0);
@@ -276,7 +306,7 @@ public class MainGameLoop {
 			entity3.increaseRotation(0, 1, 0);
 			GL11.glEnable(GL30.GL_CLIP_DISTANCE0);
 			
-			//render reflection teture
+			//render reflection texture
 			buffers.bindReflectionFrameBuffer();
 			float distance = 2 * (camera.getPosition().y - water.getHeight());
 			camera.getPosition().y -= distance;
