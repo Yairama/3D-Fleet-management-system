@@ -22,7 +22,7 @@ Use WASD - EQ to move, an press J to start the trucks simulation.
 See info [here](https://www.linkedin.com/posts/yairama_computergraphics-mining-technology-activity-6754232191728930816-s1ke "here")
 
 
-<video src='https://user-images.githubusercontent.com/45445692/230242132-9d61fb87-1422-4059-9431-8a0f28993608.mp4' width=720></video>
+https://user-images.githubusercontent.com/45445692/230242132-9d61fb87-1422-4059-9431-8a0f28993608.mp4
 
 ## Instructions
 
